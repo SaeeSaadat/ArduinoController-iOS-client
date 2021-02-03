@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-AurdinoController-ios/Pods-AurdinoController-ios-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AppLocker/AppLocker.framework
+${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework
+${BUILT_PRODUCTS_DIR}/Parse/Parse.framework
+${BUILT_PRODUCTS_DIR}/Valet/Valet.framework

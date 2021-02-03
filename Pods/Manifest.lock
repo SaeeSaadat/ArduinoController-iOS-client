@@ -1,0 +1,30 @@
+PODS:
+  - AppLocker (2.0):
+    - Valet
+  - Bolts/Tasks (1.9.1)
+  - Parse (1.19.1):
+    - Parse/Core (= 1.19.1)
+  - Parse/Core (1.19.1):
+    - Bolts/Tasks (= 1.9.1)
+  - Valet (4.1.1)
+
+DEPENDENCIES:
+  - AppLocker
+  - Parse
+
+SPEC REPOS:
+  trunk:
+    - AppLocker
+    - Bolts
+    - Parse
+    - Valet
+
+SPEC CHECKSUMS:
+  AppLocker: ad734b8027d26ae5cbb4a70eed2bed30159c3b71
+  Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
+  Parse: e40fdb9c7d665823b7fe9865949cac9a53eb2ce7
+  Valet: 11ab0e318b7284888a81392e36136563b4af5deb
+
+PODFILE CHECKSUM: 405463880ec2b83723ed4d2ab3fb4f0aa14b0e5a
+
+COCOAPODS: 1.10.0
