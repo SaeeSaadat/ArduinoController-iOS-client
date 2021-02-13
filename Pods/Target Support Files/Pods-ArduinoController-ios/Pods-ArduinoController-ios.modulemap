@@ -1,0 +1,6 @@
+framework module Pods_ArduinoController_ios {
+  umbrella header "Pods-ArduinoController-ios-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,24 @@
+/* 
+  Base.strings
+  ArduinoController-ios
+
+  Created by Saee Saadat on 1/27/21.
+  
+*/
+
+"mainListTitle" = "Your Faithful Servants";
+"aboutUsTitle" = "About Us";
+"settingsTitle" = "preferences";
+
+"aboutUs" = "About Us";
+"mainList" = "Devices";
+"settings" = "Settings";
+
+"addArduinoTableCell" = "Hire a new one!";
+
+
+//Mark: - Messages and Errors
+
+"load_again" = "Loading Failed, Try Again?";
+
+
