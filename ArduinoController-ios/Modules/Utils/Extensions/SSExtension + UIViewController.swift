@@ -14,7 +14,7 @@ extension UIViewController {
             let titleLabel = UILabel()
             titleLabel.text = (newValue ?? "").truncateWord(30)
             titleLabel.font = SSFont.titleFont(30)
-            titleLabel.textColor = UIColor(named: "AccentColor")
+            titleLabel.textColor = SSColors.accent.color
             titleLabel.sizeToFit()
             self.navigationItem.titleView = titleLabel
         }

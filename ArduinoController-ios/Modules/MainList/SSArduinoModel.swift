@@ -1,5 +1,5 @@
 //
-//  ArduinoModel.swift
+//  SSArduinoModel.swift
 //  ArduinoController-ios
 //
 //  Created by Saee Saadat on 2/13/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ArduinoModel {
+struct SSArduinoModel {
     
     var name: String?
     var description: String?

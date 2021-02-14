@@ -62,7 +62,7 @@ class SSNavigationController: UINavigationController, UINavigationControllerDele
     func addDefaultBackButton() {
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
         btn.addTarget(self, action: #selector(self.pressedBack), for: .touchUpInside)
-        btn.imageView?.tintColor = UIColor(named: "AccentColor")
+        btn.imageView?.tintColor = SSColors.accent.color
         btn.setImage(UIImage(systemName: "lessthan")!.withRenderingMode(.alwaysTemplate), for: .normal)
         btn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 42, bottom: 0, right: 0)
         

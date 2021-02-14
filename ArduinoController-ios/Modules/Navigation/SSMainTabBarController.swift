@@ -51,7 +51,7 @@ class SSMainTabBarController: UITabBarController, UITabBarControllerDelegate {
         let barLine = UIView()
         navBar.addSubview(barLine)
         barLine.translatesAutoresizingMaskIntoConstraints = false
-        barLine.backgroundColor = UIColor(named: "AccentColor")
+        barLine.backgroundColor = SSColors.accent.color
         NSLayoutConstraint.activate([
             barLine.heightAnchor.constraint(equalToConstant: 2.0),
             barLine.bottomAnchor.constraint(equalTo: barLine.superview?.bottomAnchor ?? self.view.topAnchor),

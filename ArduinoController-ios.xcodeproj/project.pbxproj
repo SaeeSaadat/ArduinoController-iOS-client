@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5B13DFFE25C2D0C100396A7A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B13DFFD25C2D0C100396A7A /* Login.storyboard */; };
 		5B62718725D82BFE00FE913D /* SSAddArduinoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B62718625D82BFE00FE913D /* SSAddArduinoTableViewCell.xib */; };
+		5B62718B25D82DEC00FE913D /* SSMainThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62718A25D82DEC00FE913D /* SSMainThemeColors.swift */; };
 		5B835DB025D6D7E000EBEAF3 /* SSSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B835DAF25D6D7E000EBEAF3 /* SSSettingsViewController.swift */; };
 		5B835DB325D6D7F600EBEAF3 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B835DB225D6D7F600EBEAF3 /* Settings.storyboard */; };
 		5B835DB725D6D87200EBEAF3 /* SSAboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B835DB625D6D87200EBEAF3 /* SSAboutUsViewController.swift */; };
@@ -16,7 +17,7 @@
 		5B835DBD25D6F80200EBEAF3 /* SSExtension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B835DBC25D6F80200EBEAF3 /* SSExtension + UIViewController.swift */; };
 		5B835DC125D700E500EBEAF3 /* SSExtension + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B835DC025D700E500EBEAF3 /* SSExtension + UITableView.swift */; };
 		5B835DC525D7EBFF00EBEAF3 /* SSMainListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B835DC425D7EBFF00EBEAF3 /* SSMainListViewModel.swift */; };
-		5B835DC825D7EC4300EBEAF3 /* ArduinoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B835DC725D7EC4300EBEAF3 /* ArduinoModel.swift */; };
+		5B835DC825D7EC4300EBEAF3 /* SSArduinoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B835DC725D7EC4300EBEAF3 /* SSArduinoModel.swift */; };
 		5B835DCD25D7EF7D00EBEAF3 /* SSNetUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B835DCC25D7EF7D00EBEAF3 /* SSNetUtil.swift */; };
 		5B835DD125D7EFF600EBEAF3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B835DD025D7EFF600EBEAF3 /* NetworkError.swift */; };
 		5BBD9A2325B977BF00A191AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD9A2225B977BF00A191AE /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		3CE35BEF14868591F4D46E5B /* Pods_ArduinoController_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArduinoController_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B13DFFD25C2D0C100396A7A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5B62718625D82BFE00FE913D /* SSAddArduinoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSAddArduinoTableViewCell.xib; sourceTree = "<group>"; };
+		5B62718A25D82DEC00FE913D /* SSMainThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSMainThemeColors.swift; sourceTree = "<group>"; };
 		5B835DAF25D6D7E000EBEAF3 /* SSSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSettingsViewController.swift; sourceTree = "<group>"; };
 		5B835DB225D6D7F600EBEAF3 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		5B835DB625D6D87200EBEAF3 /* SSAboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAboutUsViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +56,7 @@
 		5B835DBC25D6F80200EBEAF3 /* SSExtension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SSExtension + UIViewController.swift"; sourceTree = "<group>"; };
 		5B835DC025D700E500EBEAF3 /* SSExtension + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SSExtension + UITableView.swift"; sourceTree = "<group>"; };
 		5B835DC425D7EBFF00EBEAF3 /* SSMainListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSMainListViewModel.swift; sourceTree = "<group>"; };
-		5B835DC725D7EC4300EBEAF3 /* ArduinoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArduinoModel.swift; sourceTree = "<group>"; };
+		5B835DC725D7EC4300EBEAF3 /* SSArduinoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSArduinoModel.swift; sourceTree = "<group>"; };
 		5B835DCC25D7EF7D00EBEAF3 /* SSNetUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNetUtil.swift; sourceTree = "<group>"; };
 		5B835DD025D7EFF600EBEAF3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		5BBD9A1F25B977BF00A191AE /* ArduinoController-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ArduinoController-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,14 @@
 				5B13DFFD25C2D0C100396A7A /* Login.storyboard */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		5B62718925D82DDF00FE913D /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				5B62718A25D82DEC00FE913D /* SSMainThemeColors.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		5B835DAC25D6D7BE00EBEAF3 /* Settings */ = {
@@ -207,7 +217,7 @@
 				5BBD9A2825B977BF00A191AE /* MainList.storyboard */,
 				5BBD9A5925B9D7E900A191AE /* SSMainListViewController.swift */,
 				5B835DC425D7EBFF00EBEAF3 /* SSMainListViewModel.swift */,
-				5B835DC725D7EC4300EBEAF3 /* ArduinoModel.swift */,
+				5B835DC725D7EC4300EBEAF3 /* SSArduinoModel.swift */,
 			);
 			path = MainList;
 			sourceTree = "<group>";
@@ -215,6 +225,7 @@
 		5BBD9A8225B9E0A700A191AE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5B62718925D82DDF00FE913D /* Theme */,
 				5B835DCA25D7ECBA00EBEAF3 /* Network */,
 				5BF8AE3F25C172570015C8C3 /* Extensions */,
 				5BBD9A8325B9E0B500A191AE /* SSUserManager.swift */,
@@ -377,7 +388,7 @@
 				5BF8AE4725C173040015C8C3 /* SSExtensions + UIView.swift in Sources */,
 				5B835DB725D6D87200EBEAF3 /* SSAboutUsViewController.swift in Sources */,
 				5BF8AE4C25C177620015C8C3 /* SSArduinoTableViewCell.swift in Sources */,
-				5B835DC825D7EC4300EBEAF3 /* ArduinoModel.swift in Sources */,
+				5B835DC825D7EC4300EBEAF3 /* SSArduinoModel.swift in Sources */,
 				5BBD9A4425B97E6800A191AE /* SSSideBySidePushInteractor.swift in Sources */,
 				5B835DC125D700E500EBEAF3 /* SSExtension + UITableView.swift in Sources */,
 				5BBD9A4725B9807C00A191AE /* SSPages.swift in Sources */,
@@ -386,6 +397,7 @@
 				5BBD9A3A25B97C6E00A191AE /* SSNavigationController.swift in Sources */,
 				5BBD9A2325B977BF00A191AE /* AppDelegate.swift in Sources */,
 				5B835DBD25D6F80200EBEAF3 /* SSExtension + UIViewController.swift in Sources */,
+				5B62718B25D82DEC00FE913D /* SSMainThemeColors.swift in Sources */,
 				5BBD9A2525B977BF00A191AE /* SceneDelegate.swift in Sources */,
 				5BF8AE3B25C16DAA0015C8C3 /* SSMainTabBarController.swift in Sources */,
 				5BBD9A4125B97E0F00A191AE /* SSSideBySidePushTransitionAnimator.swift in Sources */,
