@@ -12,13 +12,29 @@
         <!--Settings View Controller-->
         <scene sceneID="a6l-KN-8cj">
             <objects>
-                <viewController storyboardIdentifier="settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Q8-Tm-JhL" customClass="SSSettingsViewController" customModule="AurdinoController_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Q8-Tm-JhL" customClass="SSSettingsViewController" customModule="ArduinoController_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jyC-zW-j0V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XtC-k1-LDo">
+                                <rect key="frame" x="20" y="54" width="374" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="OK5-hS-T95"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OK5-hS-T95" firstAttribute="bottom" secondItem="XtC-k1-LDo" secondAttribute="bottom" id="CXS-Ko-rVK"/>
+                            <constraint firstItem="XtC-k1-LDo" firstAttribute="top" secondItem="OK5-hS-T95" secondAttribute="top" constant="10" id="FMR-44-B3T"/>
+                            <constraint firstItem="OK5-hS-T95" firstAttribute="trailing" secondItem="XtC-k1-LDo" secondAttribute="trailing" constant="20" id="Jda-G5-JOe"/>
+                            <constraint firstItem="XtC-k1-LDo" firstAttribute="leading" secondItem="OK5-hS-T95" secondAttribute="leading" constant="20" id="uZZ-zv-CSh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="XtC-k1-LDo" id="4IF-Iz-dob"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N6p-st-Iio" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

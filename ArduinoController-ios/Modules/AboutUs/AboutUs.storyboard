@@ -18,19 +18,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arduino-logo" translatesAutoresizingMaskIntoConstraints="NO" id="eUj-GS-grB">
-                                <rect key="frame" x="20" y="124" width="374" height="200"/>
+                                <rect key="frame" x="20" y="84" width="374" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="4J1-53-lgB"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PP8-kT-kf6">
-                                <rect key="frame" x="180" y="384" width="54" height="20"/>
+                                <rect key="frame" x="180" y="344" width="54" height="20"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
                                 <color key="textColor" name="AccentColor2"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created By: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trO-Ql-S1U">
-                                <rect key="frame" x="170" y="500" width="74.5" height="20"/>
+                                <rect key="frame" x="170" y="460" width="74.5" height="20"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
                                 <color key="textColor" name="AccentColor2"/>
                                 <nil key="highlightedColor"/>
@@ -61,19 +61,19 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gh6-mN-iyy">
-                                <rect key="frame" x="190.5" y="424" width="33.5" height="36"/>
+                                <rect key="frame" x="190.5" y="384" width="33.5" height="36"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="36"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saee Saadat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pW-Or-xwv">
-                                <rect key="frame" x="138.5" y="540" width="137.5" height="36"/>
+                                <rect key="frame" x="138.5" y="500" width="137.5" height="36"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="36"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mini-Robot" translatesAutoresizingMaskIntoConstraints="NO" id="upe-x5-xx2">
-                                <rect key="frame" x="276" y="480" width="100" height="100"/>
+                                <rect key="frame" x="276" y="440" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="5dy-gX-Awc"/>
                                     <constraint firstAttribute="width" constant="100" id="CX0-wy-uG4"/>
@@ -89,7 +89,7 @@
                             <constraint firstItem="trO-Ql-S1U" firstAttribute="top" secondItem="gh6-mN-iyy" secondAttribute="bottom" constant="40" id="4gF-M2-QPe"/>
                             <constraint firstItem="eUj-GS-grB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gcD-f0-IST" secondAttribute="leading" constant="20" id="7tE-mx-jZy"/>
                             <constraint firstItem="gcD-f0-IST" firstAttribute="trailing" secondItem="We7-g9-Aae" secondAttribute="trailing" constant="50" id="ITU-UH-PHc"/>
-                            <constraint firstItem="eUj-GS-grB" firstAttribute="top" secondItem="gcD-f0-IST" secondAttribute="top" constant="80" id="Jrh-0c-b44"/>
+                            <constraint firstItem="eUj-GS-grB" firstAttribute="top" secondItem="gcD-f0-IST" secondAttribute="top" constant="40" id="Jrh-0c-b44"/>
                             <constraint firstItem="We7-g9-Aae" firstAttribute="leading" secondItem="gcD-f0-IST" secondAttribute="leading" constant="50" id="Map-oc-iDx"/>
                             <constraint firstItem="We7-g9-Aae" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7pW-Or-xwv" secondAttribute="bottom" constant="20" id="VbM-iI-DG1"/>
                             <constraint firstItem="7pW-Or-xwv" firstAttribute="top" secondItem="trO-Ql-S1U" secondAttribute="bottom" constant="20" id="bzJ-hO-cpK"/>

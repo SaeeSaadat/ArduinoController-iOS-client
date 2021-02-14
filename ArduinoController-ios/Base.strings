@@ -21,4 +21,8 @@
 
 "load_again" = "Loading Failed, Try Again?";
 
+//Mark: - Settings
 
+"theme.change" = "Change Theme";
+"logOut" = "Log Out";
+"profileSettings" = "Profile";
