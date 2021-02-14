@@ -12,6 +12,8 @@
 		5B383D5325D9B2B900167696 /* SSSettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B383D5125D9B2B900167696 /* SSSettingsTableViewCell.xib */; };
 		5B383D5825D9CBDF00167696 /* SSSettingsProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B383D5625D9CBDF00167696 /* SSSettingsProfileTableViewCell.swift */; };
 		5B383D5925D9CBDF00167696 /* SSSettingsProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B383D5725D9CBDF00167696 /* SSSettingsProfileTableViewCell.xib */; };
+		5B383D5F25D9D51A00167696 /* SSProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B383D5D25D9D51A00167696 /* SSProfileViewController.swift */; };
+		5B383D6325D9D54500167696 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B383D6225D9D54500167696 /* Profile.storyboard */; };
 		5B62718725D82BFE00FE913D /* SSAddArduinoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B62718625D82BFE00FE913D /* SSAddArduinoTableViewCell.xib */; };
 		5B62718B25D82DEC00FE913D /* SSMainThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62718A25D82DEC00FE913D /* SSMainThemeColors.swift */; };
 		5B835DB025D6D7E000EBEAF3 /* SSSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B835DAF25D6D7E000EBEAF3 /* SSSettingsViewController.swift */; };
@@ -30,7 +32,6 @@
 		5BBD9A2C25B977C400A191AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BBD9A2B25B977C400A191AE /* Assets.xcassets */; };
 		5BBD9A2F25B977C400A191AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBD9A2D25B977C400A191AE /* LaunchScreen.storyboard */; };
 		5BBD9A3A25B97C6E00A191AE /* SSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD9A3925B97C6E00A191AE /* SSNavigationController.swift */; };
-		5BBD9A3E25B97D3800A191AE /* SSNavigationCustomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD9A3D25B97D3800A191AE /* SSNavigationCustomAnimator.swift */; };
 		5BBD9A4125B97E0F00A191AE /* SSSideBySidePushTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD9A4025B97E0F00A191AE /* SSSideBySidePushTransitionAnimator.swift */; };
 		5BBD9A4425B97E6800A191AE /* SSSideBySidePushInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD9A4325B97E6800A191AE /* SSSideBySidePushInteractor.swift */; };
 		5BBD9A4725B9807C00A191AE /* SSPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD9A4625B9807C00A191AE /* SSPages.swift */; };
@@ -55,6 +56,8 @@
 		5B383D5125D9B2B900167696 /* SSSettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSSettingsTableViewCell.xib; sourceTree = "<group>"; };
 		5B383D5625D9CBDF00167696 /* SSSettingsProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSettingsProfileTableViewCell.swift; sourceTree = "<group>"; };
 		5B383D5725D9CBDF00167696 /* SSSettingsProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSSettingsProfileTableViewCell.xib; sourceTree = "<group>"; };
+		5B383D5D25D9D51A00167696 /* SSProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSProfileViewController.swift; sourceTree = "<group>"; };
+		5B383D6225D9D54500167696 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		5B62718625D82BFE00FE913D /* SSAddArduinoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSAddArduinoTableViewCell.xib; sourceTree = "<group>"; };
 		5B62718A25D82DEC00FE913D /* SSMainThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSMainThemeColors.swift; sourceTree = "<group>"; };
 		5B835DAF25D6D7E000EBEAF3 /* SSSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSettingsViewController.swift; sourceTree = "<group>"; };
@@ -75,7 +78,6 @@
 		5BBD9A2E25B977C400A191AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BBD9A3025B977C400A191AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BBD9A3925B97C6E00A191AE /* SSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNavigationController.swift; sourceTree = "<group>"; };
-		5BBD9A3D25B97D3800A191AE /* SSNavigationCustomAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNavigationCustomAnimator.swift; sourceTree = "<group>"; };
 		5BBD9A4025B97E0F00A191AE /* SSSideBySidePushTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSideBySidePushTransitionAnimator.swift; sourceTree = "<group>"; };
 		5BBD9A4325B97E6800A191AE /* SSSideBySidePushInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSideBySidePushInteractor.swift; sourceTree = "<group>"; };
 		5BBD9A4625B9807C00A191AE /* SSPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSPages.swift; sourceTree = "<group>"; };
@@ -134,6 +136,15 @@
 			path = SettingsTableViewCell;
 			sourceTree = "<group>";
 		};
+		5B383D5B25D9D42400167696 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5B383D5D25D9D51A00167696 /* SSProfileViewController.swift */,
+				5B383D6225D9D54500167696 /* Profile.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		5B62718925D82DDF00FE913D /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +156,7 @@
 		5B835DAC25D6D7BE00EBEAF3 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				5B383D5B25D9D42400167696 /* Profile */,
 				5B383D4F25D9B29100167696 /* SettingsTableViewCell */,
 				5B835DAF25D6D7E000EBEAF3 /* SSSettingsViewController.swift */,
 				5B835DB225D6D7F600EBEAF3 /* Settings.storyboard */,
@@ -221,7 +233,6 @@
 			children = (
 				5BBD9A3925B97C6E00A191AE /* SSNavigationController.swift */,
 				5BBD9A4A25B9B6E300A191AE /* SSBottomPopUpAlert.swift */,
-				5BBD9A3D25B97D3800A191AE /* SSNavigationCustomAnimator.swift */,
 				5BBD9A4025B97E0F00A191AE /* SSSideBySidePushTransitionAnimator.swift */,
 				5BBD9A4325B97E6800A191AE /* SSSideBySidePushInteractor.swift */,
 				5BBD9A4625B9807C00A191AE /* SSPages.swift */,
@@ -348,6 +359,7 @@
 				5B13DFFE25C2D0C100396A7A /* Login.storyboard in Resources */,
 				5B62718725D82BFE00FE913D /* SSAddArduinoTableViewCell.xib in Resources */,
 				5BF8AE4D25C177620015C8C3 /* SSArduinoTableViewCell.xib in Resources */,
+				5B383D6325D9D54500167696 /* Profile.storyboard in Resources */,
 				5B835DBA25D6D87D00EBEAF3 /* AboutUs.storyboard in Resources */,
 				5BBD9A2A25B977BF00A191AE /* MainList.storyboard in Resources */,
 				5BF8AE4425C172CA0015C8C3 /* Base.strings in Resources */,
@@ -419,6 +431,7 @@
 				5BBD9A3A25B97C6E00A191AE /* SSNavigationController.swift in Sources */,
 				5BBD9A2325B977BF00A191AE /* AppDelegate.swift in Sources */,
 				5B835DBD25D6F80200EBEAF3 /* SSExtension + UIViewController.swift in Sources */,
+				5B383D5F25D9D51A00167696 /* SSProfileViewController.swift in Sources */,
 				5B383D5225D9B2B900167696 /* SSSettingsTableViewCell.swift in Sources */,
 				5B62718B25D82DEC00FE913D /* SSMainThemeColors.swift in Sources */,
 				5BBD9A2525B977BF00A191AE /* SceneDelegate.swift in Sources */,
@@ -427,7 +440,6 @@
 				5B835DB025D6D7E000EBEAF3 /* SSSettingsViewController.swift in Sources */,
 				5BBD9A8425B9E0B500A191AE /* SSUserManager.swift in Sources */,
 				5B383D5825D9CBDF00167696 /* SSSettingsProfileTableViewCell.swift in Sources */,
-				5BBD9A3E25B97D3800A191AE /* SSNavigationCustomAnimator.swift in Sources */,
 				5B835DC525D7EBFF00EBEAF3 /* SSMainListViewModel.swift in Sources */,
 				5BF8AE4125C172670015C8C3 /* SSExtension + String.swift in Sources */,
 				5BBD9A4B25B9B6E300A191AE /* SSBottomPopUpAlert.swift in Sources */,
@@ -586,6 +598,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.saadat.saee.ArduinoController-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -606,6 +619,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.saadat.saee.ArduinoController-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

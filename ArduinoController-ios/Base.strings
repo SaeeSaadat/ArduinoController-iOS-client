@@ -24,5 +24,7 @@
 //Mark: - Settings
 
 "theme.change" = "Change Theme";
+"language.change" = "Change Language";
 "logOut" = "Log Out";
 "profileSettings" = "Profile";
+"profile.title" = "Profile";

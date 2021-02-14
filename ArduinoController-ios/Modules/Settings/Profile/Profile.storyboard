@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="HsD-4X-53t">
+            <objects>
+                <viewController storyboardIdentifier="profile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wKH-se-lpy" customClass="SSProfileViewController" customModule="ArduinoController_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9cg-hs-W9F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GB-Uc-Qvb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qsS-ur-iMl">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="647"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mini-Robot" translatesAutoresizingMaskIntoConstraints="NO" id="H2F-bn-Mx5">
+                                                <rect key="frame" x="80" y="30" width="254" height="254"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="H2F-bn-Mx5" secondAttribute="height" multiplier="1:1" id="vAQ-2H-2nk"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-edit" translatesAutoresizingMaskIntoConstraints="NO" id="KT3-bq-yxF">
+                                                <rect key="frame" x="279" y="229" width="40" height="40"/>
+                                                <color key="tintColor" name="AccentColor2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="Jj2-Yt-Vg0"/>
+                                                    <constraint firstAttribute="height" constant="40" id="kut-VH-t2B"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F89-MQ-bfj">
+                                                <rect key="frame" x="57" y="304" width="300" height="34"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="I7V-SO-nx4"/>
+                                                </constraints>
+                                                <color key="textColor" name="AccentColor2"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2GR-6U-BOC" userLabel="Old Password">
+                                                <rect key="frame" x="57" y="353" width="300" height="34"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="Z99-M6-R1j"/>
+                                                </constraints>
+                                                <color key="textColor" name="AccentColor2"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QC7-sb-LR8">
+                                                <rect key="frame" x="57" y="402" width="300" height="34"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="a2t-B8-aec"/>
+                                                </constraints>
+                                                <color key="textColor" name="AccentColor2"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lNK-1W-JbR">
+                                                <rect key="frame" x="57" y="451" width="300" height="34"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="dNK-1c-3Kg"/>
+                                                </constraints>
+                                                <color key="textColor" name="AccentColor2"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPp-s7-sJc">
+                                                <rect key="frame" x="157" y="515" width="100" height="32"/>
+                                                <color key="backgroundColor" name="AccentColor2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="qIA-66-Bby"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                                <state key="normal" title="Save">
+                                                    <color key="titleColor" name="OppositeTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Save"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onSavedPressed:" destination="wKH-se-lpy" eventType="touchUpInside" id="7v6-Vc-zue"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="KT3-bq-yxF" firstAttribute="bottom" secondItem="H2F-bn-Mx5" secondAttribute="bottom" constant="-15" id="1hs-hU-f2k"/>
+                                            <constraint firstItem="lNK-1W-JbR" firstAttribute="centerX" secondItem="qsS-ur-iMl" secondAttribute="centerX" id="51t-dt-45g"/>
+                                            <constraint firstItem="LPp-s7-sJc" firstAttribute="centerX" secondItem="qsS-ur-iMl" secondAttribute="centerX" id="80c-bU-jpo"/>
+                                            <constraint firstItem="F89-MQ-bfj" firstAttribute="top" secondItem="H2F-bn-Mx5" secondAttribute="bottom" constant="20" id="DvY-9h-bjQ"/>
+                                            <constraint firstItem="lNK-1W-JbR" firstAttribute="top" secondItem="QC7-sb-LR8" secondAttribute="bottom" constant="15" id="GHL-m8-7FE"/>
+                                            <constraint firstItem="KT3-bq-yxF" firstAttribute="trailing" secondItem="H2F-bn-Mx5" secondAttribute="trailing" constant="-15" id="HEu-7z-qqE"/>
+                                            <constraint firstAttribute="trailing" secondItem="H2F-bn-Mx5" secondAttribute="trailing" constant="80" id="Rng-a3-VuW"/>
+                                            <constraint firstItem="LPp-s7-sJc" firstAttribute="top" secondItem="lNK-1W-JbR" secondAttribute="bottom" constant="30" id="TUa-5z-aAB"/>
+                                            <constraint firstAttribute="bottom" secondItem="LPp-s7-sJc" secondAttribute="bottom" constant="100" id="UAH-Lc-XJr"/>
+                                            <constraint firstItem="QC7-sb-LR8" firstAttribute="centerX" secondItem="qsS-ur-iMl" secondAttribute="centerX" id="YVQ-GD-y1r"/>
+                                            <constraint firstItem="2GR-6U-BOC" firstAttribute="centerX" secondItem="qsS-ur-iMl" secondAttribute="centerX" id="n7q-Gw-vWS"/>
+                                            <constraint firstItem="H2F-bn-Mx5" firstAttribute="leading" secondItem="qsS-ur-iMl" secondAttribute="leading" constant="80" id="pG9-E6-QDp"/>
+                                            <constraint firstItem="F89-MQ-bfj" firstAttribute="centerX" secondItem="qsS-ur-iMl" secondAttribute="centerX" id="teH-cv-k8i"/>
+                                            <constraint firstItem="QC7-sb-LR8" firstAttribute="top" secondItem="2GR-6U-BOC" secondAttribute="bottom" constant="15" id="tzN-ud-CKc"/>
+                                            <constraint firstItem="H2F-bn-Mx5" firstAttribute="top" secondItem="qsS-ur-iMl" secondAttribute="top" constant="30" id="vPE-dY-6Y4"/>
+                                            <constraint firstItem="2GR-6U-BOC" firstAttribute="top" secondItem="F89-MQ-bfj" secondAttribute="bottom" constant="15" id="wfr-JJ-cfA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="qsS-ur-iMl" firstAttribute="top" secondItem="rEd-dd-9eP" secondAttribute="top" id="7pG-yT-3hT"/>
+                                    <constraint firstItem="qsS-ur-iMl" firstAttribute="bottom" secondItem="1Qy-FV-edQ" secondAttribute="bottom" id="NH5-DW-tsB"/>
+                                    <constraint firstItem="qsS-ur-iMl" firstAttribute="width" secondItem="4GB-Uc-Qvb" secondAttribute="width" id="Zxg-YK-oLH"/>
+                                    <constraint firstItem="qsS-ur-iMl" firstAttribute="leading" secondItem="4GB-Uc-Qvb" secondAttribute="leading" id="pQR-c0-OsJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="qsS-ur-iMl" secondAttribute="trailing" id="uOi-Bg-VXJ"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="1Qy-FV-edQ"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="rEd-dd-9eP"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="F9T-bk-umK"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4GB-Uc-Qvb" firstAttribute="top" secondItem="F9T-bk-umK" secondAttribute="top" id="0hD-fK-QFG"/>
+                            <constraint firstItem="4GB-Uc-Qvb" firstAttribute="leading" secondItem="F9T-bk-umK" secondAttribute="leading" id="86N-uH-Ust"/>
+                            <constraint firstAttribute="trailing" secondItem="4GB-Uc-Qvb" secondAttribute="trailing" id="m35-bG-tcP"/>
+                            <constraint firstItem="F9T-bk-umK" firstAttribute="bottom" secondItem="4GB-Uc-Qvb" secondAttribute="bottom" id="v0H-ot-cfe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="H2F-bn-Mx5" id="vkc-zK-xJ2"/>
+                        <outlet property="confirmPasswordTextField" destination="lNK-1W-JbR" id="9LB-u1-d88"/>
+                        <outlet property="editImageView" destination="KT3-bq-yxF" id="PGq-4V-q7s"/>
+                        <outlet property="nameTextField" destination="F89-MQ-bfj" id="lPf-O9-bF4"/>
+                        <outlet property="oldPasswordTextField" destination="2GR-6U-BOC" id="iYs-uV-TAG"/>
+                        <outlet property="passwordTextField" destination="QC7-sb-LR8" id="WiL-1u-wgg"/>
+                        <outlet property="saveButton" destination="LPp-s7-sJc" id="EYe-gD-wdX"/>
+                        <outlet property="scrollView" destination="4GB-Uc-Qvb" id="9eu-3M-URw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Yw-80-8OO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-284.05797101449275" y="-74.330357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Mini-Robot" width="600" height="600"/>
+        <image name="icon-edit" width="50" height="50"/>
+        <namedColor name="AccentColor2">
+            <color red="0.30399999022483826" green="0.98299998044967651" blue="0.91600000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BackgroundColor">
+            <color red="0.15700000524520874" green="0.164000004529953" blue="0.18500000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="OppositeTextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

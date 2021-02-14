@@ -24,6 +24,7 @@ class SSSettingsViewController: UIViewController {
     private func setupItems() {
         items = [
             SettingsItem(title: "theme.change".localized, icon: UIImage(named: "icon-theme")),
+            SettingsItem(title: "language.change".localized, icon: UIImage(named: "icon-language")),
             SettingsItem(title: "logOut".localized, icon: UIImage(named: "icon-exit"))
         ]
         
@@ -38,7 +39,10 @@ class SSSettingsViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "SSSettingsTableViewCell", bundle: nil), forCellReuseIdentifier: "settingsItemCell")
         tableView.register(UINib(nibName: "SSSettingsProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "settingsProfileCell")
-        
+    }
+    
+    private func gotoProfile() {
+        SSNavigationController.shared.pushNewViewController(page: .profile, animated: true)
     }
     
 
@@ -46,6 +50,39 @@ class SSSettingsViewController: UIViewController {
 
 
 extension SSSettingsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "settingsProfileCell") as? SSSettingsProfileTableViewCell
+                cell?.setupCell(image: nil)
+                cell?.selectionStyle = .none
+                return cell ?? UITableViewCell()
+                
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "settingsItemCell") as? SSSettingsTableViewCell
+                let item = profileItems[indexPath.row - 1]
+                cell?.setupCell(title: item.title, icon: item.icon)
+                cell?.selectionStyle = .none
+                return cell ?? UITableViewCell()
+            }
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "settingsItemCell") as? SSSettingsTableViewCell
+            let item = items[indexPath.row]
+            cell?.setupCell(title: item.title, icon: item.icon, isLast: indexPath.row == items.count - 1)
+            cell?.selectionStyle = .none
+            return cell ?? UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            gotoProfile()
+        } else {
+            return
+        }
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -59,27 +96,7 @@ extension SSSettingsViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.section == 0 {
-            if indexPath.row == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "settingsProfileCell") as? SSSettingsProfileTableViewCell
-                cell?.setupCell(image: nil)
-                return cell ?? UITableViewCell()
-                
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "settingsItemCell") as? SSSettingsTableViewCell
-                let item = profileItems[indexPath.row - 1]
-                cell?.setupCell(title: item.title, icon: item.icon)
-                return cell ?? UITableViewCell()
-            }
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "settingsItemCell") as? SSSettingsTableViewCell
-            let item = items[indexPath.row]
-            cell?.setupCell(title: item.title, icon: item.icon, isLast: indexPath.row == items.count - 1)
-            return cell ?? UITableViewCell()
-        }
-    }
+    
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 ? 0 : 40

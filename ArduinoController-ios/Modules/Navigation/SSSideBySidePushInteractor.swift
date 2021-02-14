@@ -17,23 +17,25 @@ class SSSideBySidePushInteractor: UIPercentDrivenInteractiveTransition, Navigati
     let transitionCompletionThreshold: CGFloat = 0.1
     var completion: (() -> Void)?
     var viewController: UIViewController?
+    private var edge: UIRectEdge = .right
     
     var isPerforming: Bool = false
     
     var swipeBackGesture: UIScreenEdgePanGestureRecognizer?
 
-    init?(attachTo viewController: UIViewController) {
+    init?(attachTo viewController: UIViewController, edge: UIRectEdge = .right) {
         guard let nav = viewController.navigationController else { return nil }
         self.viewController = viewController
         self.navigationController = nav as? SSNavigationController
         super.init()
+        self.edge = edge
         setupBackGesture(view: viewController.view)
     }
 
     private func setupBackGesture(view: UIView) {
         self.swipeBackGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleBackGesture(_:)))
         if let swipeBackGesture = self.swipeBackGesture {
-            swipeBackGesture.edges = .right
+            swipeBackGesture.edges = self.edge
             view.addGestureRecognizer(swipeBackGesture)
         }
     }
@@ -49,7 +51,8 @@ class SSSideBySidePushInteractor: UIPercentDrivenInteractiveTransition, Navigati
 
     @objc internal func handleBackGesture(_ gesture: UIScreenEdgePanGestureRecognizer) {
         let viewTranslation = gesture.translation(in: gesture.view?.superview)
-        let transitionProgress = ( (-viewTranslation.x) / (UIScreen.main.bounds.width * 2))
+        let c = self.edge == .right ? CGFloat(-1.0) : 1.0
+        let transitionProgress = ( (c * viewTranslation.x) / (UIScreen.main.bounds.width))
 
         switch gesture.state {
         case .began:
@@ -62,10 +65,10 @@ class SSSideBySidePushInteractor: UIPercentDrivenInteractiveTransition, Navigati
             isPerforming = false
             cancelTransition(progress: transitionProgress)
         case .ended:
-            if gesture.velocity(in: gesture.view).x < -300 {
+            if -c * gesture.velocity(in: gesture.view).x < -c * 300 {
                 finish()
                 return
-            } else if gesture.velocity(in: gesture.view).x > 300 {
+            } else if -c * gesture.velocity(in: gesture.view).x > -c * 300 {
                 cancelTransition(progress: transitionProgress)
                 isPerforming = false
                 return
@@ -100,7 +103,9 @@ class SSSideBySidePushInteractor: UIPercentDrivenInteractiveTransition, Navigati
     
     @objc func popToRootViewController(gesture: UIScreenEdgePanGestureRecognizer) {
         let viewTranslation = gesture.translation(in: gesture.view?.superview)
-               let transitionProgress = ( (-viewTranslation.x) / (UIScreen.main.bounds.width * 2))
+                
+               let c = self.edge == .right ? CGFloat(-1.0) : 1.0
+               let transitionProgress = ( (c * viewTranslation.x) / (UIScreen.main.bounds.width * 2))
 
                switch gesture.state {
                case .began:
@@ -117,10 +122,10 @@ class SSSideBySidePushInteractor: UIPercentDrivenInteractiveTransition, Navigati
                    self.isPerforming = false
                    self.cancelTransition(progress: transitionProgress)
                case .ended:
-                   if gesture.velocity(in: gesture.view).x < -300 {
+                   if gesture.velocity(in: gesture.view).x < c * -300 {
                        self.finish()
                        return
-                   } else if gesture.velocity(in: gesture.view).x > 300 {
+                   } else if gesture.velocity(in: gesture.view).x > c * 300 {
                        self.cancelTransition(progress: transitionProgress)
                        self.isPerforming = false
                        return

@@ -60,11 +60,11 @@ class SSNavigationController: UINavigationController, UINavigationControllerDele
     }
     
     func addDefaultBackButton() {
-        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
+        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 10))
         btn.addTarget(self, action: #selector(self.pressedBack), for: .touchUpInside)
         btn.imageView?.tintColor = SSColors.accent.color
-        btn.setImage(UIImage(systemName: "lessthan")!.withRenderingMode(.alwaysTemplate), for: .normal)
-        btn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 42, bottom: 0, right: 0)
+        btn.setImage(UIImage(named: "back-button")!.withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         self.backBarButton = UIBarButtonItem(customView: btn)
         
@@ -100,7 +100,7 @@ class SSNavigationController: UINavigationController, UINavigationControllerDele
         }
         super.pushViewController(viewController, animated: animated)
         self.addBackButton()
-        initializeInteractor(for: viewController)
+        initializeInteractor(for: viewController, edge: .left)
     }
     
     func findViewController(page: SSPages) -> UIViewController {
@@ -118,13 +118,13 @@ class SSNavigationController: UINavigationController, UINavigationControllerDele
         for i in 0..<self.viewControllers.count {
             
             if i > 0 {
-                self.viewControllers[i].navigationItem.rightBarButtonItem = self.backBarButton
+                self.viewControllers[i].navigationItem.setLeftBarButton(self.backBarButton, animated: true)
             }
         }
     }
     
     func removeBackButton() {
-        self.viewControllers.last?.navigationItem.setRightBarButtonItems(nil, animated: true)
+        self.viewControllers.last?.navigationItem.setLeftBarButton(nil, animated: true)
         
     }
     
@@ -132,9 +132,9 @@ class SSNavigationController: UINavigationController, UINavigationControllerDele
 
         switch operation {
         case .push:
-            return FPSideBySidePushTransitionAnimator(direction: .right)
-        default:
             return FPSideBySidePushTransitionAnimator(direction: .left)
+        default:
+            return FPSideBySidePushTransitionAnimator(direction: .right)
         }
     }
     
@@ -178,8 +178,8 @@ protocol FPPopCancelableViewController {
 
 // MARK: swipe back interactor
 extension SSNavigationController {
-    private func initializeInteractor (for vc: UIViewController) {
-        let interactor = SSSideBySidePushInteractor(attachTo: vc)
+    private func initializeInteractor (for vc: UIViewController, edge: UIRectEdge) {
+        let interactor = SSSideBySidePushInteractor(attachTo: vc, edge: edge)
         interactor?.completion = { [weak self] in
             if !(self?.interactors.isEmpty ?? true) {
                 self?.interactors.removeLast()
