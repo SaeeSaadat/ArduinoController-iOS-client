@@ -14,6 +14,7 @@
 		5B383D5925D9CBDF00167696 /* SSSettingsProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B383D5725D9CBDF00167696 /* SSSettingsProfileTableViewCell.xib */; };
 		5B383D5F25D9D51A00167696 /* SSProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B383D5D25D9D51A00167696 /* SSProfileViewController.swift */; };
 		5B383D6325D9D54500167696 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B383D6225D9D54500167696 /* Profile.storyboard */; };
+		5B383D9C25D9F07A00167696 /* SSBottomPopUpAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B383D9A25D9EFB100167696 /* SSBottomPopUpAlert.xib */; };
 		5B62718725D82BFE00FE913D /* SSAddArduinoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B62718625D82BFE00FE913D /* SSAddArduinoTableViewCell.xib */; };
 		5B62718B25D82DEC00FE913D /* SSMainThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62718A25D82DEC00FE913D /* SSMainThemeColors.swift */; };
 		5B835DB025D6D7E000EBEAF3 /* SSSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B835DAF25D6D7E000EBEAF3 /* SSSettingsViewController.swift */; };
@@ -58,6 +59,7 @@
 		5B383D5725D9CBDF00167696 /* SSSettingsProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSSettingsProfileTableViewCell.xib; sourceTree = "<group>"; };
 		5B383D5D25D9D51A00167696 /* SSProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSProfileViewController.swift; sourceTree = "<group>"; };
 		5B383D6225D9D54500167696 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		5B383D9A25D9EFB100167696 /* SSBottomPopUpAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSBottomPopUpAlert.xib; sourceTree = "<group>"; };
 		5B62718625D82BFE00FE913D /* SSAddArduinoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSAddArduinoTableViewCell.xib; sourceTree = "<group>"; };
 		5B62718A25D82DEC00FE913D /* SSMainThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSMainThemeColors.swift; sourceTree = "<group>"; };
 		5B835DAF25D6D7E000EBEAF3 /* SSSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSettingsViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,15 @@
 				5B383D6225D9D54500167696 /* Profile.storyboard */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		5B383D9925D9EF9B00167696 /* popup */ = {
+			isa = PBXGroup;
+			children = (
+				5B383D9A25D9EFB100167696 /* SSBottomPopUpAlert.xib */,
+				5BBD9A4A25B9B6E300A191AE /* SSBottomPopUpAlert.swift */,
+			);
+			path = popup;
 			sourceTree = "<group>";
 		};
 		5B62718925D82DDF00FE913D /* Theme */ = {
@@ -231,8 +242,8 @@
 		5BBD9A3825B97C4400A191AE /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				5B383D9925D9EF9B00167696 /* popup */,
 				5BBD9A3925B97C6E00A191AE /* SSNavigationController.swift */,
-				5BBD9A4A25B9B6E300A191AE /* SSBottomPopUpAlert.swift */,
 				5BBD9A4025B97E0F00A191AE /* SSSideBySidePushTransitionAnimator.swift */,
 				5BBD9A4325B97E6800A191AE /* SSSideBySidePushInteractor.swift */,
 				5BBD9A4625B9807C00A191AE /* SSPages.swift */,
@@ -364,6 +375,7 @@
 				5BBD9A2A25B977BF00A191AE /* MainList.storyboard in Resources */,
 				5BF8AE4425C172CA0015C8C3 /* Base.strings in Resources */,
 				5B383D5925D9CBDF00167696 /* SSSettingsProfileTableViewCell.xib in Resources */,
+				5B383D9C25D9F07A00167696 /* SSBottomPopUpAlert.xib in Resources */,
 				5B835DB325D6D7F600EBEAF3 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

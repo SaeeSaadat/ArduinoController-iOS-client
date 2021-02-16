@@ -41,7 +41,7 @@ class SSBottomPopUpAlert: UIView {
     }
     
     func onCreate() {
-        Bundle.main.loadNibNamed("FPBottomPopUpAlert", owner: self, options: nil)
+        Bundle.main.loadNibNamed("SSBottomPopUpAlert", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
@@ -62,12 +62,12 @@ class SSBottomPopUpAlert: UIView {
         
         if alertState == .success {
             contentView.backgroundColor = UIColor(named: "popup-background-success")
-            label.textColor = UIColor(named: "normalTextColor")
-            closeButton.tintColor = UIColor(named: "normalTextColor")
+            label.textColor = SSColors.normalText.color
+            closeButton.tintColor = SSColors.normalText.color
         } else {
             contentView.backgroundColor = UIColor(named: "popup-background-fail")
-            label.textColor = UIColor(named: "normalTextColor")
-            closeButton.tintColor = UIColor(named: "normalTextColor")
+            label.textColor = SSColors.normalText.color
+            closeButton.tintColor = SSColors.normalText.color
         }
         if let image = image {
             imageView.image = image

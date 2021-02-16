@@ -74,7 +74,7 @@ class SSNavigationController: UINavigationController, UINavigationControllerDele
     //very important!!! to go back call this function!
     @objc func pressedBack() {
         
-        if let cancelableLastViewControllers = self.viewControllers.last as? FPPopCancelableViewController {
+        if let cancelableLastViewControllers = self.viewControllers.last as? SSPopCancelableViewController {
             if cancelableLastViewControllers.cancelViewControllerPop() {
                 return
             }
@@ -170,7 +170,7 @@ class SSNavigationController: UINavigationController, UINavigationControllerDele
     }
 }
 
-protocol FPPopCancelableViewController {
+protocol SSPopCancelableViewController {
     
     func cancelViewControllerPop() -> Bool
     

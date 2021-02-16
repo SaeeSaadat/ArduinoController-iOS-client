@@ -53,13 +53,13 @@ class SSAboutUsViewController: UIViewController {
             mail.setSubject("Arduino controller iOS-client")
             present(mail, animated: true)
         } else {
-//            SSNavigationController.shared.showBottomPopUpAlert(withTitle: "Couldn't open Email compose view", alertState: .failure)
+            SSNavigationController.shared.showBottomPopUpAlert(withTitle: "Couldn't open Email compose view", alertState: .failure)
         }
     }
     
     @objc private func gitTap() {
         guard let url = URL(string: "https://github.com/SaeeSaadat") else {
-//            SSNavigationController.shared.showBottomPopUpAlert(withTitle: "Couldn't open Github Page! just search my name tho! :)", alertState: .failure)
+            SSNavigationController.shared.showBottomPopUpAlert(withTitle: "Couldn't open Github Page! Just search my name tho! :)", alertState: .failure)
             return
         }
         UIApplication.shared.open(url)
@@ -67,7 +67,7 @@ class SSAboutUsViewController: UIViewController {
     
     @objc private func teleTap() {
         guard let url = URL(string: "https://t.me/SsAaEee") else {
-//            SSNavigationController.shared.showBottomPopUpAlert(withTitle: "Couldn't open Github Page! just search my name tho! :)", alertState: .failure)
+            SSNavigationController.shared.showBottomPopUpAlert(withTitle: "Couldn't open Telegram! It's probably not meant to be :)", alertState: .failure)
             return
         }
         UIApplication.shared.open(url)
@@ -75,7 +75,7 @@ class SSAboutUsViewController: UIViewController {
     
     @objc private func twiTap() {
         guard let url = URL(string: "https://twitter.com/SaeeSaadat") else {
-//            SSNavigationController.shared.showBottomPopUpAlert(withTitle: "Couldn't open Github Page! just search my name tho! :)", alertState: .failure)
+            SSNavigationController.shared.showBottomPopUpAlert(withTitle: "Couldn't open Twitter Page! You're not missing much tho! :)", alertState: .failure)
             return
         }
         UIApplication.shared.open(url)
