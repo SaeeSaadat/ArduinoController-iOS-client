@@ -40,7 +40,7 @@ class SSProfileViewController: UIViewController {
             textField?.layer.borderWidth = 1.0
             textField?.layer.borderColor = SSColors.accent2.color.cgColor
             textField?.layer.cornerRadius = 5.0
-            textField?.attributedPlaceholder = NSAttributedString(string: (textField?.placeholder ?? "").localized, attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.3038125336, green: 0.9831895232, blue: 0.9157457352, alpha: 0.65)])
+            textField?.attributedPlaceholder = NSAttributedString(string: (textField?.placeholder ?? "").localized, attributes: [NSAttributedString.Key.foregroundColor : SSColors.accent2.color.withAlphaComponent(0.3)])
         })
         
         saveButton.layer.cornerRadius = 10.0

@@ -8,7 +8,7 @@
 import UIKit
 
 enum SSPages: String {
-    case login              = "login@LoginView"
+    case login              = "login@Login"
     case mainList           = "mainList@MainList"
     case settings           = "settings@Settings"
     case profile            = "profile@Profile"

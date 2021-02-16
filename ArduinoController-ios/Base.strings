@@ -6,6 +6,8 @@
   
 */
 
+"app.name" = "Arduino Controller";
+
 "mainListTitle" = "Your Faithful Servants";
 "aboutUsTitle" = "About Us";
 "settingsTitle" = "preferences";
@@ -28,3 +30,15 @@
 "logOut" = "Log Out";
 "profileSettings" = "Profile";
 "profile.title" = "Profile";
+"logout.message" = "Are you sure tho?";
+"yes" = "Yup";
+"no" = "Nah";
+
+
+//Mark: - Login / signup
+
+"signup.terms.of.service.desc" = "By Signing up we assume that you have read the terms of service and have agreed to it! but since we don't have one of those yet, basically by pressing this button you're calling yourself a freaking liar! wow! just wow!";
+"sign.up" = "Sign up";
+"sign.in" = "Sign in";
+"switch.desc.sign.up" = "Already have an account?";
+"switch.desc.sign.in" = "Don't have an account?";

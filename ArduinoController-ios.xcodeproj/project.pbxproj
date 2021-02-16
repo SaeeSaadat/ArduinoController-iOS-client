@@ -27,6 +27,7 @@
 		5B835DC825D7EC4300EBEAF3 /* SSArduinoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B835DC725D7EC4300EBEAF3 /* SSArduinoModel.swift */; };
 		5B835DCD25D7EF7D00EBEAF3 /* SSNetUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B835DCC25D7EF7D00EBEAF3 /* SSNetUtil.swift */; };
 		5B835DD125D7EFF600EBEAF3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B835DD025D7EFF600EBEAF3 /* NetworkError.swift */; };
+		5B8511FC25DC45B400C00035 /* SSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8511FB25DC45B400C00035 /* SSLoginViewController.swift */; };
 		5BBD9A2325B977BF00A191AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD9A2225B977BF00A191AE /* AppDelegate.swift */; };
 		5BBD9A2525B977BF00A191AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD9A2425B977BF00A191AE /* SceneDelegate.swift */; };
 		5BBD9A2A25B977BF00A191AE /* MainList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBD9A2825B977BF00A191AE /* MainList.storyboard */; };
@@ -72,6 +73,7 @@
 		5B835DC725D7EC4300EBEAF3 /* SSArduinoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSArduinoModel.swift; sourceTree = "<group>"; };
 		5B835DCC25D7EF7D00EBEAF3 /* SSNetUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNetUtil.swift; sourceTree = "<group>"; };
 		5B835DD025D7EFF600EBEAF3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		5B8511FB25DC45B400C00035 /* SSLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLoginViewController.swift; sourceTree = "<group>"; };
 		5BBD9A1F25B977BF00A191AE /* ArduinoController-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ArduinoController-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BBD9A2225B977BF00A191AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BBD9A2425B977BF00A191AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				5B13DFFD25C2D0C100396A7A /* Login.storyboard */,
+				5B8511FB25DC45B400C00035 /* SSLoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B8511FC25DC45B400C00035 /* SSLoginViewController.swift in Sources */,
 				5BBD9A8825B9E14000A191AE /* SSUserDefaults.swift in Sources */,
 				5B835DD125D7EFF600EBEAF3 /* NetworkError.swift in Sources */,
 				5BF8AE4725C173040015C8C3 /* SSExtensions + UIView.swift in Sources */,

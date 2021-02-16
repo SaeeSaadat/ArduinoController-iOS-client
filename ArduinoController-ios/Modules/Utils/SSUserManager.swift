@@ -24,4 +24,8 @@ class SSUserManager {
         }
     }
     
+    public static func logoutUser() {
+        SSUserDefault.setValue(false, key: .isLoggedIn)
+    }
+    
 }

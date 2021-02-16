@@ -42,13 +42,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setRoot(navigation: SSNavigationController) {
         switch self.level {
         case 0:
-//            navigation.setRootViewController(vc: navigation.findViewController(page: .mainList)) //TODO
-            let vc = SSMainTabBarController()
-            navigation.setRootViewController(vc: vc)
+            navigation.setRootViewController(vc: navigation.findViewController(page: .login))
         default:
             let vc = SSMainTabBarController()
             navigation.setRootViewController(vc: vc)
         }
+    }
+    
+    func logout() {
+        SSUserManager.logoutUser()
+        SSNavigationController.shared.setRootViewController(page: .login, animated: true)
     }
 
     // MARK: UISceneSession Lifecycle

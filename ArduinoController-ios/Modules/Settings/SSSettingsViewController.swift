@@ -45,6 +45,17 @@ class SSSettingsViewController: UIViewController {
         SSNavigationController.shared.pushNewViewController(page: .profile, animated: true)
     }
     
+    private func showLogOutDialog() {
+        let alert = UIAlertController(title: "logOut".localized, message: "logout.message".localized, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "no".localized, style: .default, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "yes".localized, style: .destructive, handler: { _ in
+            (UIApplication.shared.delegate as? AppDelegate)?.logout()
+        }))
+        
+        present(alert, animated: true, completion: nil)
+    }
 
 }
 
@@ -80,7 +91,16 @@ extension SSSettingsViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             gotoProfile()
         } else {
-            return
+            switch indexPath.row {
+            case 0:
+                SSNavigationController.shared.showBottomPopUpAlert(withTitle: "Hopefully in the next version", alertState: .failure)
+            case 1:
+                SSNavigationController.shared.showBottomPopUpAlert(withTitle: "Hopefully in the next version", alertState: .failure)
+            case 2:
+                showLogOutDialog()
+            default:
+                return
+            }
         }
     }
     
