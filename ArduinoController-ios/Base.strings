@@ -61,4 +61,6 @@
 "add.arduino.desc" = "Please provide required information about your device.";
 "submit" = "Submit";
 
+"arduino.controller.desc" = "Here are all the things your arduino is designed to do:";
+
 
