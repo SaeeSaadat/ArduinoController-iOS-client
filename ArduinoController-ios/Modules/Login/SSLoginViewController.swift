@@ -55,11 +55,36 @@ class SSLoginViewController: UIViewController {
         fields.forEach({
             if let field = $0 {
                 field.attributedPlaceholder = NSAttributedString(string: field.placeholder?.localized ?? "", attributes: [NSAttributedString.Key.foregroundColor: SSColors.accent2.color.withAlphaComponent(0.3)])
+                
+                field.delegate = self
+                
                 let separator = UIView()
                 field.addSubview(separator)
-                customizeSeparator(separator)
+                
+                separator.tag = SSViewTags.textFieldSeparator.rawValue
+                separator.translatesAutoresizingMaskIntoConstraints = false
+                separator.backgroundColor = SSColors.accent2.color.withAlphaComponent(0.7)
+                NSLayoutConstraint.activate([
+                    separator.heightAnchor.constraint(equalToConstant: 1.0),
+                    separator.bottomAnchor.constraint(equalTo: field.bottomAnchor),
+                    separator.leadingAnchor.constraint(equalTo: field.leadingAnchor, constant: -5),
+                    separator.trailingAnchor.constraint(equalTo: field.trailingAnchor, constant: -5)
+                ])
             }
         })
+    }
+    
+    private func customizeSeparator(_ view: UIView) {
+        view.tag = SSViewTags.textFieldSeparator.rawValue
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = SSColors.accent2.color.withAlphaComponent(0.7)
+        guard let supview = view.superview else { return }
+        NSLayoutConstraint.activate([
+            view.heightAnchor.constraint(equalToConstant: 1.0),
+            view.bottomAnchor.constraint(equalTo: supview.bottomAnchor),
+            view.leadingAnchor.constraint(equalTo: supview.leadingAnchor, constant: -5),
+            view.trailingAnchor.constraint(equalTo: supview.trailingAnchor, constant: -5)
+        ])
     }
     
     private func setupButton() {
@@ -80,10 +105,80 @@ class SSLoginViewController: UIViewController {
     
     @IBAction func submitButtonPressed(_ sender: UIButton) {
         
+        //Validation
+        guard let username = usernameTextfield.text, username.count > 4 else {
+            invalidateTextField(usernameTextfield)
+            showError(message: "username.short")
+            return
+        }
+        
+        guard let password = passwordTextfield.text, checkPassword(password) else {
+            invalidateTextField(passwordTextfield)
+            showError(message: "password.rule")
+            return
+        }
+        
+        if mode == 0 { // signup
+            
+            guard let email = emailTextField.text, checkEmail(email) else {
+                invalidateTextField(emailTextField)
+                showError(message: "email.invalid")
+                return
+            }
+            
+            guard let confPass = confirmPasswordTextfield.text, password == confPass else {
+                invalidateTextField(confirmPasswordTextfield)
+                showError(message: "confirm.password.error")
+                return
+            }
+            
+            //TODO: Signup
+            
+        } else { //signin
+            
+            //TODO Signin
+            signin(username: username, sessionToken: "R1892719646192478")
+        }
+    }
+    
+    private func signin(username: String, sessionToken: String) {
+        guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        appdelegate.signin(username: username, sessionToken: sessionToken)
     }
 }
 
-extension SSLoginViewController { // Transition for the Login
+//MARK: - Validation
+extension SSLoginViewController {
+    
+    private func checkPassword(_ password: String) -> Bool {
+        let checker = NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[a-z])(?=.*[$@$#!%*?&])(?=.*[A-Z]).{6,}$")
+        return checker.evaluate(with: password)
+    }
+    
+    private func checkEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
+    private func invalidateTextField(_ field: UITextField) {
+        guard let line = field.viewWithTag(SSViewTags.textFieldSeparator.rawValue) else { return }
+        line.backgroundColor = SSColors.errorRed.color.withAlphaComponent(0.7)
+    }
+    
+    private func validateTextField(_ field: UITextField) {
+        guard let line = field.viewWithTag(SSViewTags.textFieldSeparator.rawValue) else { return }
+        line.backgroundColor = SSColors.accent2.color.withAlphaComponent(0.7)
+    }
+    
+    private func showError(message: String) {
+        SSNavigationController.shared.showBottomPopUpAlert(withTitle: message.localized, alertState: .failure)
+    }
+}
+
+
+//MARK: - Transition login / logout
+extension SSLoginViewController {
     
     private func switchToSignin() {
         
@@ -132,8 +227,6 @@ extension SSLoginViewController { // Transition for the Login
             self.switchDescLabel.text = "switch.desc.sign.in".localized
         }, completion: nil)
         
-            
-        
         mode = 0
     }
     
@@ -146,17 +239,8 @@ extension SSLoginViewController { // Transition for the Login
     
 }
 
-extension SSLoginViewController {
-    private func customizeSeparator(_ view: UIView) {
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = SSColors.accent2.color.withAlphaComponent(0.7)
-        guard let supview = view.superview else { return }
-        NSLayoutConstraint.activate([
-            view.heightAnchor.constraint(equalToConstant: 1.0),
-            view.bottomAnchor.constraint(equalTo: supview.bottomAnchor),
-            view.leadingAnchor.constraint(equalTo: supview.leadingAnchor, constant: -5),
-            view.trailingAnchor.constraint(equalTo: supview.trailingAnchor, constant: -5)
-        ])
+extension SSLoginViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        validateTextField(textField)
     }
 }

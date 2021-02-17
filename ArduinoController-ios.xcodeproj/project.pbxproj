@@ -196,6 +196,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		5B85120225DC972F00C00035 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B835DC725D7EC4300EBEAF3 /* SSArduinoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5BBD9A1625B977BE00A191AE = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +225,7 @@
 		5BBD9A2125B977BF00A191AE /* ArduinoController-ios */ = {
 			isa = PBXGroup;
 			children = (
+				5B85120225DC972F00C00035 /* Models */,
 				5BBD9A3725B97C3D00A191AE /* Modules */,
 				5BBD9A2225B977BF00A191AE /* AppDelegate.swift */,
 				5BBD9A2425B977BF00A191AE /* SceneDelegate.swift */,
@@ -262,7 +271,6 @@
 				5BBD9A2825B977BF00A191AE /* MainList.storyboard */,
 				5BBD9A5925B9D7E900A191AE /* SSMainListViewController.swift */,
 				5B835DC425D7EBFF00EBEAF3 /* SSMainListViewModel.swift */,
-				5B835DC725D7EC4300EBEAF3 /* SSArduinoModel.swift */,
 			);
 			path = MainList;
 			sourceTree = "<group>";

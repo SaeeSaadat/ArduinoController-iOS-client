@@ -22,4 +22,5 @@ enum SSViewTags: Int {
     case bottomPopup = 1004
     case loadingIndicator = 1005
     case secondLoadingIndicator = 1006
+    case textFieldSeparator = 1007
 }

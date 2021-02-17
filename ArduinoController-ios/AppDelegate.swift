@@ -51,7 +51,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func logout() {
         SSUserManager.logoutUser()
+        self.level = 0
         SSNavigationController.shared.setRootViewController(page: .login, animated: true)
+    }
+    
+    func signin(username: String, sessionToken: String) {
+        SSUserManager.loginUser(username: username, sessionToken: sessionToken)
+        self.level = 1
+        SSNavigationController.shared.setRootViewController(vc: SSMainTabBarController(), animated: true)
     }
 
     // MARK: UISceneSession Lifecycle

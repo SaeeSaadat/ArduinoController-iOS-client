@@ -42,3 +42,8 @@
 "sign.in" = "Sign in";
 "switch.desc.sign.up" = "Already have an account?";
 "switch.desc.sign.in" = "Don't have an account?";
+
+"username.short" = "Username must be atleast 5 letters";
+"password.rule" = "Password must include atleast 1 capital letter and 1 special character";
+"email.invalid" = "Please enter a valid email address! it doesn't really matter! but please do!";
+"confirm.password.error" = "Password confirmation is incorrect";

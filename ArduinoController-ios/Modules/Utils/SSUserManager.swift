@@ -11,7 +11,6 @@ class SSUserManager {
     
     static var sessionToken: String?
     static var name: String?
-    static var mobileNumber: String?
     
     public static var isLoggedIn: Bool {
         get {
@@ -26,6 +25,13 @@ class SSUserManager {
     
     public static func logoutUser() {
         SSUserDefault.setValue(false, key: .isLoggedIn)
+        SSUserDefault.setValue(nil, key: .name)
+        SSUserDefault.setValue(nil, key: .sessionToken)
     }
     
+    public static func loginUser(username: String, sessionToken: String) {
+        SSUserDefault.setValue(username, key: .name)
+        SSUserDefault.setValue(sessionToken, key: .sessionToken)
+        SSUserDefault.setValue(true, key: .isLoggedIn)
+    }
 }

@@ -56,7 +56,6 @@ class SSNavigationController: UINavigationController, UINavigationControllerDele
         }
         
         self.setViewControllers([vc], animated: animated)
-        self.addDefaultBackButton()
     }
     
     func addDefaultBackButton() {
@@ -73,13 +72,6 @@ class SSNavigationController: UINavigationController, UINavigationControllerDele
     
     //very important!!! to go back call this function!
     @objc func pressedBack() {
-        
-        if let cancelableLastViewControllers = self.viewControllers.last as? SSPopCancelableViewController {
-            if cancelableLastViewControllers.cancelViewControllerPop() {
-                return
-            }
-        }
-        
         self.popViewController(animated: true)
     }
     
@@ -168,12 +160,6 @@ class SSNavigationController: UINavigationController, UINavigationControllerDele
         self.view.addSubview(popUpView)
         popUpView.show()
     }
-}
-
-protocol SSPopCancelableViewController {
-    
-    func cancelViewControllerPop() -> Bool
-    
 }
 
 // MARK: swipe back interactor

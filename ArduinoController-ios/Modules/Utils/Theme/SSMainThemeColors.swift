@@ -15,7 +15,7 @@ enum SSColors: String {
     case background2    =   "BackgroundColor2"
     case normalText     =   "NormalTextColor"
     case fadeText       =   "fadeTextColor"
-    
+    case errorRed       =   "errorRedColor"
     
     var color: UIColor {
         return UIColor(named: self.rawValue) ?? UIColor.white
