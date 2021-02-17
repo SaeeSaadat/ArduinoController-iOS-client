@@ -77,7 +77,7 @@ extension SSMainListViewController: UITableViewDelegate, UITableViewDataSource {
             cell = theCell
         }
         
-        cell.selectionStyle = .none
+        cell.selectionStyle = .default
         return cell
         
     }

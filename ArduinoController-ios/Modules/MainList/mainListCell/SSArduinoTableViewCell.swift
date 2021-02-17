@@ -34,17 +34,21 @@ class SSArduinoTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
 //        super.setSelected(selected, animated: animated)
 
-        self.backgroundFillerHeightConstriant.constant = selected ? self.frame.height - 10 : 0
 
-        UIView.animate(withDuration: 0.3 , animations: {
+
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        self.backgroundFillerHeightConstriant.constant = highlighted ? self.frame.height - 10 : 0
+
+        UIView.animate(withDuration: 0.1 , animations: {
 
             self.layoutIfNeeded()
         })
         
-        UIView.transition(with: nameLabel, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            self.nameLabel.textColor = selected ? SSColors.accent2.color : SSColors.accent.color
+        UIView.transition(with: nameLabel, duration: 0.1, options: .transitionCrossDissolve, animations: {
+            self.nameLabel.textColor = highlighted ? SSColors.background.color : SSColors.accent.color
         }, completion: nil)
-        
     }
     
 }

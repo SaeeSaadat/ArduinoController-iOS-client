@@ -14,6 +14,7 @@ enum SSColors: String {
     case background     =   "BackgroundColor"
     case background2    =   "BackgroundColor2"
     case normalText     =   "NormalTextColor"
+    case oppositText    =   "OppositeTextColor"
     case fadeText       =   "fadeTextColor"
     case errorRed       =   "errorRedColor"
     
