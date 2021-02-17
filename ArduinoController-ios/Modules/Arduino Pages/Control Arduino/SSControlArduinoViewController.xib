@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SSControlArduinoViewController" customModule="ArduinoController_ios" customModuleProvider="target">
             <connections>
+                <outlet property="emptyView" destination="Uak-jS-E0h" id="zoJ-JZ-djv"/>
                 <outlet property="tableView" destination="0aa-10-9xj" id="WvN-1m-ZxI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,19 +25,56 @@
                     <rect key="frame" x="20" y="84" width="374" height="758"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uak-jS-E0h">
+                    <rect key="frame" x="15" y="342.5" width="384" height="211.5"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mini-Robot" translatesAutoresizingMaskIntoConstraints="NO" id="iAj-sV-5r5">
+                            <rect key="frame" x="117" y="0.0" width="150" height="150"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="WOJ-Jn-bx5"/>
+                                <constraint firstAttribute="height" constant="150" id="lCy-ZX-U0P"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewE-V9-0A7">
+                            <rect key="frame" x="170" y="170" width="44" height="21.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" name="AccentColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="empty.tableview"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ewE-V9-0A7" firstAttribute="centerX" secondItem="iAj-sV-5r5" secondAttribute="centerX" id="ITH-eJ-vnT"/>
+                        <constraint firstItem="iAj-sV-5r5" firstAttribute="centerX" secondItem="Uak-jS-E0h" secondAttribute="centerX" id="JIq-LG-WQf"/>
+                        <constraint firstItem="iAj-sV-5r5" firstAttribute="top" secondItem="Uak-jS-E0h" secondAttribute="top" id="eYk-b1-kuX"/>
+                        <constraint firstAttribute="bottom" secondItem="ewE-V9-0A7" secondAttribute="bottom" constant="20" id="kEx-eZ-LQS"/>
+                        <constraint firstItem="ewE-V9-0A7" firstAttribute="top" secondItem="iAj-sV-5r5" secondAttribute="bottom" constant="20" id="sbM-2t-oiW"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0aa-10-9xj" secondAttribute="trailing" constant="20" id="3LA-Bj-HHt"/>
+                <constraint firstItem="Uak-jS-E0h" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="5hU-KT-QRL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0aa-10-9xj" secondAttribute="bottom" constant="20" id="CgX-6p-q2i"/>
                 <constraint firstItem="0aa-10-9xj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="HDX-xY-gFq"/>
+                <constraint firstItem="Uak-jS-E0h" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MWt-7u-Shj"/>
+                <constraint firstItem="Uak-jS-E0h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="NvK-Dr-MoA"/>
                 <constraint firstItem="0aa-10-9xj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Xa2-Y8-24U"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Uak-jS-E0h" secondAttribute="trailing" constant="15" id="vTD-SX-gMo"/>
             </constraints>
-            <point key="canvasLocation" x="-157" y="-36"/>
+            <point key="canvasLocation" x="-157.97101449275362" y="-36.160714285714285"/>
         </view>
     </objects>
     <resources>
+        <image name="Mini-Robot" width="600" height="600"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.37599998712539673" blue="0.74900001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="BackgroundColor">
             <color red="0.15700000524520874" green="0.164000004529953" blue="0.18500000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

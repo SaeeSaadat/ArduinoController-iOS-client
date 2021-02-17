@@ -10,6 +10,7 @@ import UIKit
 class SSControlArduinoViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
     
     private var model: SSArduinoModel?
     var functions: [SSArduinoFunction] {
@@ -45,7 +46,9 @@ class SSControlArduinoViewController: UIViewController {
 extension SSControlArduinoViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return functions.count
+        let count = functions.count
+        self.emptyView.isHidden = (count != 0)
+        return count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -62,5 +62,5 @@
 "submit" = "Submit";
 
 "arduino.controller.desc" = "Here are all the things your arduino is designed to do:";
-
+"empty.tableview" = "Just a useless functionless Robot!";
 
