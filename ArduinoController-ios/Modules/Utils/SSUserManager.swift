@@ -38,23 +38,17 @@ class SSUserManager {
         return SSUserDefault.getValue(key: .name) as? String
     }
     
-    public static var sessionToken: String? {
-        return SSUserDefault.getValue(key: .sessionToken) as? String
-    }
-    
     //MARK: - Functions
     
     public static func logoutUser() {
         SSUserDefault.setValue(false, key: .isLoggedIn)
         SSUserDefault.setValue(nil, key: .name)
-        SSUserDefault.setValue(nil, key: .sessionToken)
         SSUserDefault.setValue(false, key: .hasApplock)
         SSUserDefault.setValue(nil, key: .passcode)
     }
     
-    public static func loginUser(username: String, sessionToken: String) {
+    public static func loginUser(username: String) {
         SSUserDefault.setValue(username, key: .name)
-        SSUserDefault.setValue(sessionToken, key: .sessionToken)
         SSUserDefault.setValue(true, key: .isLoggedIn)
     }
     

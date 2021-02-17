@@ -36,6 +36,8 @@
 		5B8511FC25DC45B400C00035 /* SSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8511FB25DC45B400C00035 /* SSLoginViewController.swift */; };
 		5B85120D25DD15EA00C00035 /* SSAddArduinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85120B25DD15EA00C00035 /* SSAddArduinoViewController.swift */; };
 		5B85120E25DD15EA00C00035 /* SSAddArduinoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B85120C25DD15EA00C00035 /* SSAddArduinoViewController.xib */; };
+		5B99A08F25DDC42800F9C0C2 /* SSParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A08E25DDC42800F9C0C2 /* SSParseManager.swift */; };
+		5B99A09325DDCA0B00F9C0C2 /* SSParseUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A09225DDCA0B00F9C0C2 /* SSParseUserManager.swift */; };
 		5BBD9A2325B977BF00A191AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD9A2225B977BF00A191AE /* AppDelegate.swift */; };
 		5BBD9A2525B977BF00A191AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD9A2425B977BF00A191AE /* SceneDelegate.swift */; };
 		5BBD9A2A25B977BF00A191AE /* MainList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBD9A2825B977BF00A191AE /* MainList.storyboard */; };
@@ -94,6 +96,8 @@
 		5B8511FB25DC45B400C00035 /* SSLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLoginViewController.swift; sourceTree = "<group>"; };
 		5B85120B25DD15EA00C00035 /* SSAddArduinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAddArduinoViewController.swift; sourceTree = "<group>"; };
 		5B85120C25DD15EA00C00035 /* SSAddArduinoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSAddArduinoViewController.xib; sourceTree = "<group>"; };
+		5B99A08E25DDC42800F9C0C2 /* SSParseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSParseManager.swift; sourceTree = "<group>"; };
+		5B99A09225DDCA0B00F9C0C2 /* SSParseUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSParseUserManager.swift; sourceTree = "<group>"; };
 		5BBD9A1F25B977BF00A191AE /* ArduinoController-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ArduinoController-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BBD9A2225B977BF00A191AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BBD9A2425B977BF00A191AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -282,6 +286,15 @@
 			path = "Add Arduino";
 			sourceTree = "<group>";
 		};
+		5B99A08D25DDC41C00F9C0C2 /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+				5B99A08E25DDC42800F9C0C2 /* SSParseManager.swift */,
+				5B99A09225DDCA0B00F9C0C2 /* SSParseUserManager.swift */,
+			);
+			path = Parse;
+			sourceTree = "<group>";
+		};
 		5BBD9A1625B977BE00A191AE = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +372,7 @@
 		5BBD9A8225B9E0A700A191AE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5B99A08D25DDC41C00F9C0C2 /* Parse */,
 				5B62718925D82DDF00FE913D /* Theme */,
 				5B835DCA25D7ECBA00EBEAF3 /* Network */,
 				5BF8AE3F25C172570015C8C3 /* Extensions */,
@@ -534,6 +548,7 @@
 				5B835DD125D7EFF600EBEAF3 /* NetworkError.swift in Sources */,
 				5BF8AE4725C173040015C8C3 /* SSExtensions + UIView.swift in Sources */,
 				5B835DB725D6D87200EBEAF3 /* SSAboutUsViewController.swift in Sources */,
+				5B99A09325DDCA0B00F9C0C2 /* SSParseUserManager.swift in Sources */,
 				5BF8AE4C25C177620015C8C3 /* SSArduinoTableViewCell.swift in Sources */,
 				5B835DC825D7EC4300EBEAF3 /* SSArduinoModel.swift in Sources */,
 				5B2B111E25DD29F500D82845 /* SSControlArduinoViewController.swift in Sources */,
@@ -544,6 +559,7 @@
 				5BBD9A5A25B9D7E900A191AE /* SSMainListViewController.swift in Sources */,
 				5BBD9A4F25B9B79300A191AE /* SSConstants.swift in Sources */,
 				5BBD9A3A25B97C6E00A191AE /* SSNavigationController.swift in Sources */,
+				5B99A08F25DDC42800F9C0C2 /* SSParseManager.swift in Sources */,
 				5BBD9A2325B977BF00A191AE /* AppDelegate.swift in Sources */,
 				5BE952CC25DD78A5003F1FE4 /* SSAddArduinoTableViewCell.swift in Sources */,
 				5B62522325DD84D80058C489 /* SSPasscodeViewController.swift in Sources */,

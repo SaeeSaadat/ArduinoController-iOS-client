@@ -11,7 +11,6 @@ enum SSUserDefaultKeys: String {
     
     case isLoggedIn
     case hasApplock
-    case sessionToken
     case name
     case avatar
     case passcode

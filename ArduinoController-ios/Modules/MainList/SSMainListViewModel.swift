@@ -14,6 +14,8 @@ class SSMainListViewModel {
     func getModels(page: Int? = 0, successfulCallBack: (([SSArduinoModel]) -> Void)?, failedCallBack: FailedCallBack? = nil) {
         //TODO: Server call
         
+        
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0, execute: {
             var funs = [SSArduinoFunction(name: "Start", signalCode: "1234")]
             for _ in 0...50 { funs.append(funs[0]) }
@@ -30,10 +32,6 @@ class SSMainListViewModel {
             successfulCallBack?(self.arduinos!)
         })
         
-        
-    }
-    
-    func addNewModel() {
         
     }
     

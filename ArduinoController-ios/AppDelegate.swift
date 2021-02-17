@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let userDefault = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        SSParseManager.initializeParse()
         return true
     }
     
@@ -54,12 +55,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func logout() {
         SSUserManager.logoutUser()
+        SSParseUserManager.logout()
         self.level = 0
         SSNavigationController.shared.setRootViewController(page: .login, animated: true)
     }
     
-    func signin(username: String, sessionToken: String) {
-        SSUserManager.loginUser(username: username, sessionToken: sessionToken)
+    func signin(username: String) {
+        SSUserManager.loginUser(username: username)
         self.level = 2
         presentLocker(create: true)
     }
@@ -78,7 +80,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.setRoot(navigation: SSNavigationController.shared)
         }
         
-//        vc.modalPresentationStyle = .overCurrentContext
         SSNavigationController.shared.setRootViewController(vc: vc, animated: true)
     }
 
@@ -95,6 +96,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    
 
 }
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Parse
 
 class SSLoginViewController: UIViewController {
 
@@ -46,6 +47,7 @@ class SSLoginViewController: UIViewController {
         setupTextFields()
         setupButton()
         scrollView.alwaysBounceVertical = true
+        scrollView.keyboardDismissMode = .onDrag
     }
     
     private func setupTextFields() {
@@ -90,7 +92,7 @@ class SSLoginViewController: UIViewController {
     }
     
     @IBAction func submitButtonPressed(_ sender: UIButton) {
-        
+        self.view.endEditing(false)
         //Validation
         guard let username = usernameTextfield.text, username.count > 3 else {
             invalidateTextField(usernameTextfield)
@@ -104,7 +106,7 @@ class SSLoginViewController: UIViewController {
             return
         }
         
-        if mode == 0 { // signup
+        if mode == 0 {
             
             guard let email = emailTextField.text, checkEmail(email) else {
                 invalidateTextField(emailTextField)
@@ -118,18 +120,41 @@ class SSLoginViewController: UIViewController {
                 return
             }
             
-            //TODO: Signup
-            
-        } else { //signin
-            
-            //TODO Signin
-            signin(username: username, sessionToken: "R1892719646192478")
+            signup(username: username, password: password, email: email)
+        
+        } else {
+            signin(username: username, password: password)
         }
     }
     
-    private func signin(username: String, sessionToken: String) {
-        guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        appdelegate.signin(username: username, sessionToken: sessionToken)
+    private func signin(username: String, password: String) {
+        submitButton.showLoading(show: true)
+        SSParseUserManager.signin(username: username, password: password, onSuccess: { [weak self] user in
+            guard let self = self else { return }
+            self.submitButton.showLoading(show: false)
+            
+            guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            appdelegate.signin(username: username)
+        
+        }, onFailed: { [weak self] error in
+            guard let self = self else { return }
+            SSNavigationController.shared.showBottomPopUpAlert(withTitle: error?.localizedDescription ?? "unknown.error".localized, alertState: .failure)
+            self.submitButton.showLoading(show: false)
+        })
+    }
+    
+    private func signup(username: String, password: String, email: String) {
+        submitButton.showLoading(show: true)
+        SSParseUserManager.signup(username: username, password: password, email: email, onSuccess: {
+        
+            guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            appdelegate.signin(username: username)
+            self.submitButton.showLoading(show: false)
+        
+        }, onFailed: { error in
+            SSNavigationController.shared.showBottomPopUpAlert(withTitle: error.localizedDescription, alertState: .failure)
+            self.submitButton.showLoading(show: false)
+        })
     }
 }
 

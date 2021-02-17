@@ -23,6 +23,7 @@
 
 "load.again" = "Loading Failed, Try Again?";
 "try.again" = "Try again";
+"unknown.error" = "Something went wrong!";
 
 //Mark: - Settings
 
@@ -66,3 +67,4 @@
 
 "create.passcode" = "Set your passcode";
 "enter.passcode" = "Enter your passcode";
+
