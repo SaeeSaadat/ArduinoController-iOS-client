@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addArduinoCell" rowHeight="153" id="bzP-XX-aZa">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addArduinoCell" rowHeight="153" id="bzP-XX-aZa" customClass="SSAddArduinoTableViewCell" customModule="ArduinoController_ios" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="153"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bzP-XX-aZa" id="Zqg-jE-XMi">
@@ -57,6 +57,11 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="bottomLineHeight" destination="kuJ-hV-Z33" id="1I8-bz-NWt"/>
+                <outlet property="label" destination="aYw-RU-xq1" id="V8h-0X-cn3"/>
+                <outlet property="topLineHeight" destination="Jbr-cW-qLz" id="uLf-Gi-8WZ"/>
+            </connections>
             <point key="canvasLocation" x="904" y="140"/>
         </tableViewCell>
     </objects>

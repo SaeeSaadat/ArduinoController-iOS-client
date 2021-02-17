@@ -20,6 +20,7 @@ class SSArduinoFunctionTableViewCell: UITableViewCell {
     @IBOutlet weak var innerSquareWidth: NSLayoutConstraint!
     
     private var checkView: JellyGifImageView?
+    private var isPerforming: Bool = false
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,6 +55,8 @@ class SSArduinoFunctionTableViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
+        guard !self.isPerforming else { return }
+        
         innerSquareWidth.constant = selected ? 100 : 50
         innerSquareHeight.constant = selected ? 100 : 50
         UIView.animate(withDuration: 0.2, animations: {
@@ -62,6 +65,7 @@ class SSArduinoFunctionTableViewCell: UITableViewCell {
         
         if selected {
             //Send API
+            self.isPerforming = true
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 self.appearCheckView(true)
@@ -79,10 +83,13 @@ class SSArduinoFunctionTableViewCell: UITableViewCell {
                 self.contentView.layoutIfNeeded()
             })
             self.fadeCheckView()
+            self.isPerforming = false
         })
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        guard !self.isPerforming else { return }
+        
         innerSquareWidth.constant = highlighted ? 20 : 50
         innerSquareHeight.constant = highlighted ? 20 : 50
         UIView.animate(withDuration: 0.2, animations: {

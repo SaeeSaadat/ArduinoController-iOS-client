@@ -52,6 +52,7 @@
 		5BE952B025DD52B2003F1FE4 /* SSArduinoFunctionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE952AF25DD52B2003F1FE4 /* SSArduinoFunctionTableViewCell.xib */; };
 		5BE952C425DD71D5003F1FE4 /* tick.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5BE952C325DD71D4003F1FE4 /* tick.gif */; };
 		5BE952C825DD766F003F1FE4 /* xmark.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5BE952C725DD766E003F1FE4 /* xmark.gif */; };
+		5BE952CC25DD78A5003F1FE4 /* SSAddArduinoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE952CB25DD78A5003F1FE4 /* SSAddArduinoTableViewCell.swift */; };
 		5BF8AE3B25C16DAA0015C8C3 /* SSMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF8AE3A25C16DAA0015C8C3 /* SSMainTabBarController.swift */; };
 		5BF8AE4125C172670015C8C3 /* SSExtension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF8AE4025C172670015C8C3 /* SSExtension + String.swift */; };
 		5BF8AE4425C172CA0015C8C3 /* Base.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BF8AE4325C172CA0015C8C3 /* Base.strings */; };
@@ -110,6 +111,7 @@
 		5BE952AF25DD52B2003F1FE4 /* SSArduinoFunctionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSArduinoFunctionTableViewCell.xib; sourceTree = "<group>"; };
 		5BE952C325DD71D4003F1FE4 /* tick.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tick.gif; sourceTree = "<group>"; };
 		5BE952C725DD766E003F1FE4 /* xmark.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = xmark.gif; sourceTree = "<group>"; };
+		5BE952CB25DD78A5003F1FE4 /* SSAddArduinoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAddArduinoTableViewCell.swift; sourceTree = "<group>"; };
 		5BF8AE3A25C16DAA0015C8C3 /* SSMainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSMainTabBarController.swift; sourceTree = "<group>"; };
 		5BF8AE4025C172670015C8C3 /* SSExtension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SSExtension + String.swift"; sourceTree = "<group>"; };
 		5BF8AE4325C172CA0015C8C3 /* Base.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Base.strings; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				5BF8AE4A25C177620015C8C3 /* SSArduinoTableViewCell.swift */,
 				5BF8AE4B25C177620015C8C3 /* SSArduinoTableViewCell.xib */,
 				5B62718625D82BFE00FE913D /* SSAddArduinoTableViewCell.xib */,
+				5BE952CB25DD78A5003F1FE4 /* SSAddArduinoTableViewCell.swift */,
 			);
 			path = mainListCell;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				5BBD9A4F25B9B79300A191AE /* SSConstants.swift in Sources */,
 				5BBD9A3A25B97C6E00A191AE /* SSNavigationController.swift in Sources */,
 				5BBD9A2325B977BF00A191AE /* AppDelegate.swift in Sources */,
+				5BE952CC25DD78A5003F1FE4 /* SSAddArduinoTableViewCell.swift in Sources */,
 				5B835DBD25D6F80200EBEAF3 /* SSExtension + UIViewController.swift in Sources */,
 				5B2B111525DD1B7900D82845 /* SSExtension + UITextField.swift in Sources */,
 				5B383D5F25D9D51A00167696 /* SSProfileViewController.swift in Sources */,
