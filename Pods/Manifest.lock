@@ -2,6 +2,7 @@ PODS:
   - AppLocker (2.0):
     - Valet
   - Bolts/Tasks (1.9.1)
+  - JellyGif (1.0.2)
   - Loading (1.0.3)
   - Parse (1.19.1):
     - Parse/Core (= 1.19.1)
@@ -11,6 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - AppLocker
+  - JellyGif
   - Loading
   - Parse
 
@@ -18,6 +20,7 @@ SPEC REPOS:
   trunk:
     - AppLocker
     - Bolts
+    - JellyGif
     - Loading
     - Parse
     - Valet
@@ -25,10 +28,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AppLocker: ad734b8027d26ae5cbb4a70eed2bed30159c3b71
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
+  JellyGif: 52b7569b7015f3b1ab2a6be30e4a81d47f974c97
   Loading: f5aedc8017424a6315d00b4cc130769d9c27868f
   Parse: e40fdb9c7d665823b7fe9865949cac9a53eb2ce7
   Valet: 11ab0e318b7284888a81392e36136563b4af5deb
 
-PODFILE CHECKSUM: a40aa3410736caddafea6e14d27a2115a680856f
+PODFILE CHECKSUM: 1798caab14ef700fa12c6af28436a0063ee6fa1d
 
 COCOAPODS: 1.10.0

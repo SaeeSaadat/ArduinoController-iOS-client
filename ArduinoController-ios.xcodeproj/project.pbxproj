@@ -13,7 +13,6 @@
 		5B2B111E25DD29F500D82845 /* SSControlArduinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B111C25DD29F500D82845 /* SSControlArduinoViewController.swift */; };
 		5B2B111F25DD29F500D82845 /* SSControlArduinoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B2B111D25DD29F500D82845 /* SSControlArduinoViewController.xib */; };
 		5B2B112425DD2C4F00D82845 /* SSArduinoFunctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B112225DD2C4F00D82845 /* SSArduinoFunctionCollectionViewCell.swift */; };
-		5B2B112525DD2C4F00D82845 /* SSArduinoFunctionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B2B112325DD2C4F00D82845 /* SSArduinoFunctionCollectionViewCell.xib */; };
 		5B383D5225D9B2B900167696 /* SSSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B383D5025D9B2B900167696 /* SSSettingsTableViewCell.swift */; };
 		5B383D5325D9B2B900167696 /* SSSettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B383D5125D9B2B900167696 /* SSSettingsTableViewCell.xib */; };
 		5B383D5825D9CBDF00167696 /* SSSettingsProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B383D5625D9CBDF00167696 /* SSSettingsProfileTableViewCell.swift */; };
@@ -50,6 +49,9 @@
 		5BBD9A5A25B9D7E900A191AE /* SSMainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD9A5925B9D7E900A191AE /* SSMainListViewController.swift */; };
 		5BBD9A8425B9E0B500A191AE /* SSUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD9A8325B9E0B500A191AE /* SSUserManager.swift */; };
 		5BBD9A8825B9E14000A191AE /* SSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBD9A8725B9E14000A191AE /* SSUserDefaults.swift */; };
+		5BE952B025DD52B2003F1FE4 /* SSArduinoFunctionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BE952AF25DD52B2003F1FE4 /* SSArduinoFunctionTableViewCell.xib */; };
+		5BE952C425DD71D5003F1FE4 /* tick.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5BE952C325DD71D4003F1FE4 /* tick.gif */; };
+		5BE952C825DD766F003F1FE4 /* xmark.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5BE952C725DD766E003F1FE4 /* xmark.gif */; };
 		5BF8AE3B25C16DAA0015C8C3 /* SSMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF8AE3A25C16DAA0015C8C3 /* SSMainTabBarController.swift */; };
 		5BF8AE4125C172670015C8C3 /* SSExtension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF8AE4025C172670015C8C3 /* SSExtension + String.swift */; };
 		5BF8AE4425C172CA0015C8C3 /* Base.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BF8AE4325C172CA0015C8C3 /* Base.strings */; };
@@ -67,7 +69,6 @@
 		5B2B111C25DD29F500D82845 /* SSControlArduinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSControlArduinoViewController.swift; sourceTree = "<group>"; };
 		5B2B111D25DD29F500D82845 /* SSControlArduinoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSControlArduinoViewController.xib; sourceTree = "<group>"; };
 		5B2B112225DD2C4F00D82845 /* SSArduinoFunctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSArduinoFunctionCollectionViewCell.swift; sourceTree = "<group>"; };
-		5B2B112325DD2C4F00D82845 /* SSArduinoFunctionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSArduinoFunctionCollectionViewCell.xib; sourceTree = "<group>"; };
 		5B383D5025D9B2B900167696 /* SSSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		5B383D5125D9B2B900167696 /* SSSettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSSettingsTableViewCell.xib; sourceTree = "<group>"; };
 		5B383D5625D9CBDF00167696 /* SSSettingsProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSettingsProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -106,6 +107,9 @@
 		5BBD9A5925B9D7E900A191AE /* SSMainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSMainListViewController.swift; sourceTree = "<group>"; };
 		5BBD9A8325B9E0B500A191AE /* SSUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSUserManager.swift; sourceTree = "<group>"; };
 		5BBD9A8725B9E14000A191AE /* SSUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSUserDefaults.swift; sourceTree = "<group>"; };
+		5BE952AF25DD52B2003F1FE4 /* SSArduinoFunctionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSArduinoFunctionTableViewCell.xib; sourceTree = "<group>"; };
+		5BE952C325DD71D4003F1FE4 /* tick.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tick.gif; sourceTree = "<group>"; };
+		5BE952C725DD766E003F1FE4 /* xmark.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = xmark.gif; sourceTree = "<group>"; };
 		5BF8AE3A25C16DAA0015C8C3 /* SSMainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSMainTabBarController.swift; sourceTree = "<group>"; };
 		5BF8AE4025C172670015C8C3 /* SSExtension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SSExtension + String.swift"; sourceTree = "<group>"; };
 		5BF8AE4325C172CA0015C8C3 /* Base.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Base.strings; sourceTree = "<group>"; };
@@ -160,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				5B2B112225DD2C4F00D82845 /* SSArduinoFunctionCollectionViewCell.swift */,
-				5B2B112325DD2C4F00D82845 /* SSArduinoFunctionCollectionViewCell.xib */,
+				5BE952AF25DD52B2003F1FE4 /* SSArduinoFunctionTableViewCell.xib */,
 			);
 			path = SSArduinoFunctionCollectionCell;
 			sourceTree = "<group>";
@@ -278,6 +282,8 @@
 		5BBD9A2125B977BF00A191AE /* ArduinoController-ios */ = {
 			isa = PBXGroup;
 			children = (
+				5BE952C725DD766E003F1FE4 /* xmark.gif */,
+				5BE952C325DD71D4003F1FE4 /* tick.gif */,
 				5B85120225DC972F00C00035 /* Models */,
 				5BBD9A3725B97C3D00A191AE /* Modules */,
 				5BBD9A2225B977BF00A191AE /* AppDelegate.swift */,
@@ -435,17 +441,19 @@
 				5BBD9A2F25B977C400A191AE /* LaunchScreen.storyboard in Resources */,
 				5BBD9A2C25B977C400A191AE /* Assets.xcassets in Resources */,
 				5B13DFFE25C2D0C100396A7A /* Login.storyboard in Resources */,
+				5BE952B025DD52B2003F1FE4 /* SSArduinoFunctionTableViewCell.xib in Resources */,
 				5B62718725D82BFE00FE913D /* SSAddArduinoTableViewCell.xib in Resources */,
 				5BF8AE4D25C177620015C8C3 /* SSArduinoTableViewCell.xib in Resources */,
 				5B383D6325D9D54500167696 /* Profile.storyboard in Resources */,
 				5B835DBA25D6D87D00EBEAF3 /* AboutUs.storyboard in Resources */,
+				5BE952C425DD71D5003F1FE4 /* tick.gif in Resources */,
 				5BBD9A2A25B977BF00A191AE /* MainList.storyboard in Resources */,
 				5BF8AE4425C172CA0015C8C3 /* Base.strings in Resources */,
 				5B2B111F25DD29F500D82845 /* SSControlArduinoViewController.xib in Resources */,
 				5B383D5925D9CBDF00167696 /* SSSettingsProfileTableViewCell.xib in Resources */,
 				5B383D9C25D9F07A00167696 /* SSBottomPopUpAlert.xib in Resources */,
 				5B835DB325D6D7F600EBEAF3 /* Settings.storyboard in Resources */,
-				5B2B112525DD2C4F00D82845 /* SSArduinoFunctionCollectionViewCell.xib in Resources */,
+				5BE952C825DD766F003F1FE4 /* xmark.gif in Resources */,
 				5B85120E25DD15EA00C00035 /* SSAddArduinoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

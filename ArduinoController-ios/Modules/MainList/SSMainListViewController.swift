@@ -67,7 +67,11 @@ extension SSMainListViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             let index = indexPath.row - 1
             guard let arduino = items?[index] else { return }
-            print("dabadeedabadaa")
+            
+            let vc = SSControlArduinoViewController()
+            vc.setupModel(model: arduino)
+            
+            SSNavigationController.shared.pushViewController(vc, animated: true)
         }
     }
     

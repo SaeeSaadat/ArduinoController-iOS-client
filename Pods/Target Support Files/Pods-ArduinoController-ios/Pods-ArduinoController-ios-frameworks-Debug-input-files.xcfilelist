@@ -1,6 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-ArduinoController-ios/Pods-ArduinoController-ios-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AppLocker/AppLocker.framework
 ${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework
+${BUILT_PRODUCTS_DIR}/JellyGif/JellyGif.framework
 ${BUILT_PRODUCTS_DIR}/Loading/Loading.framework
 ${BUILT_PRODUCTS_DIR}/Parse/Parse.framework
 ${BUILT_PRODUCTS_DIR}/Valet/Valet.framework

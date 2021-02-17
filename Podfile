@@ -9,5 +9,6 @@ target 'ArduinoController-ios' do
 	pod 'Parse'
 	pod 'AppLocker'
 	pod 'Loading'
+	pod 'JellyGif'
 
 end

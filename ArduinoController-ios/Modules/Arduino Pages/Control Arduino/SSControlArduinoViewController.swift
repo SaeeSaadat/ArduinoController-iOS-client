@@ -9,41 +9,70 @@ import UIKit
 
 class SSControlArduinoViewController: UIViewController {
 
-    @IBOutlet weak var descLabel: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     
-    var functions: [SSArduinoFunction] = []
+    private var model: SSArduinoModel?
+    var functions: [SSArduinoFunction] {
+        return self.model?.functions ?? []
+    }
     
     override func viewDidLoad() {
-            super.viewDidLoad()
+        super.viewDidLoad()
+        setupView()
+    }
+    
+    func setupModel(model: SSArduinoModel) {
+        self.model = model
+    }
 
-            setupView()
-        }
-
-        private func setupView() {
-            
-            setupCollectionView()
-            
-        }
+    private func setupView() {
         
-        private func setupCollectionView() {
-            collectionView.register(UINib(nibName: "SSArduinoFunctionCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "controllerCell")
-            collectionView.delegate = self
-            collectionView.dataSource = self
-        }
+        self.SSTitle = self.model?.name
+        setupTableView()
+        
+    }
+    
+    private func setupTableView() {
+        tableView.register(UINib(nibName: "SSArduinoFunctionTableViewCell", bundle: nil), forCellReuseIdentifier: "functionCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        
+    }
 
 }
 
-extension SSControlArduinoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension SSControlArduinoViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return functions.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "controllerCell", for: indexPath) as? SSArduinoFunctionCollectionViewCell
-            else { return UICollectionViewCell() }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 0 ? 0 : 20
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = .clear
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "functionCell") as? SSArduinoFunctionTableViewCell else {
+            return UITableViewCell()
+        }
+        let index = indexPath.section
+        cell.setupCell(model: functions[index], index: index)
         return cell
     }
+    
+    
+    
     
     
 }
