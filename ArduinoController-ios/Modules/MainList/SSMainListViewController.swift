@@ -82,5 +82,32 @@ extension SSMainListViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard indexPath.row != 0 else { return nil }
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete".localized, handler: {_,_,handler in
+            self.showDeleteDialog(index: indexPath.row - 1, handler: handler)
+        })
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    private func showDeleteDialog(index: Int, handler: (@escaping (Bool) -> Void ) ) {
+        guard let arduino = items?[index] else { return }
+        let alert = UIAlertController(title: "delte.arduino".localized, message: "delete.arduino.message".localized + (arduino.name ?? " - "), preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "no".localized, style: .default, handler: { _ in
+            handler(false)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "yes".localized, style: .destructive, handler: { _ in
+            //TODO: DELETE API
+            self.tableView.beginUpdates()
+            self.tableView.deleteRows(at: [IndexPath(row: index + 1, section: 0)], with: .left)
+            self.items?.remove(at: index)
+            self.tableView.endUpdates()
+            
+        }))
+        
+        present(alert, animated: true, completion: nil)
+    }
     
 }

@@ -47,3 +47,9 @@
 "password.rule" = "Password must include atleast 1 capital letter and 1 special character";
 "email.invalid" = "Please enter a valid email address! it doesn't really matter! but please do!";
 "confirm.password.error" = "Password confirmation is incorrect";
+
+
+//Mark: - arduinos
+
+"delte.arduino" = "Delete Arduino";
+"delte.arduino.message" = "Are you sure you want to delete: ";
