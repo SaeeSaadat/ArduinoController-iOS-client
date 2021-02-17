@@ -38,7 +38,7 @@ class SSMainListViewController: UIViewController {
     private func loadModels() {
         tableView.loading.start(
             .rotate(#imageLiteral(resourceName: "loading_indecator").withTintColor(SSColors.accent.color), at: 50),
-            .text("load_again".localized, font: SSFont.errorFont(), color: .red),
+            .text("load.again".localized, font: SSFont.errorFont(), color: .red),
             tag: SSViewTags.loadingIndicator.rawValue
         )
         
@@ -59,6 +59,16 @@ class SSMainListViewController: UIViewController {
 extension SSMainListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (items?.count ?? 0) + 1
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            SSNavigationController.shared.pushViewController(SSAddArduinoViewController(), animated: true)
+        } else {
+            let index = indexPath.row - 1
+            guard let arduino = items?[index] else { return }
+            print("dabadeedabadaa")
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,18 +97,23 @@ extension SSMainListViewController: UITableViewDelegate, UITableViewDataSource {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete".localized, handler: {_,_,handler in
             self.showDeleteDialog(index: indexPath.row - 1, handler: handler)
         })
-        return UISwipeActionsConfiguration(actions: [deleteAction])
+        
+        let renameAction = UIContextualAction(style: .normal, title: "Rename".localized, handler: { _,_,handler in
+            self.showRenameDialog(index: indexPath.row - 1, handler: handler)
+        })
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction, renameAction])
     }
     
     private func showDeleteDialog(index: Int, handler: (@escaping (Bool) -> Void ) ) {
         guard let arduino = items?[index] else { return }
         let alert = UIAlertController(title: "delte.arduino".localized, message: "delete.arduino.message".localized + (arduino.name ?? " - "), preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "no".localized, style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "no".localized, style: .cancel, handler: { _ in
             handler(false)
         }))
         
-        alert.addAction(UIAlertAction(title: "yes".localized, style: .destructive, handler: { _ in
+        alert.addAction(UIAlertAction(title: "yes".localized, style: .default, handler: { _ in
             //TODO: DELETE API
             self.tableView.beginUpdates()
             self.tableView.deleteRows(at: [IndexPath(row: index + 1, section: 0)], with: .left)
@@ -108,6 +123,37 @@ extension SSMainListViewController: UITableViewDelegate, UITableViewDataSource {
         }))
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    private func showRenameDialog(index: Int, handler: (@escaping (Bool) -> Void ) ) {
+     
+        guard let arduino = items?[index] else { return }
+        let alert = UIAlertController(title: "rename.arduino".localized, message: "rename.arduino.message".localized + (arduino.name ?? " - "), preferredStyle: .alert)
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "New Name"
+        })
+        alert.addAction(UIAlertAction(title: "Cancel".localized, style: .default, handler: { _ in
+            handler(false)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Ok".localized, style: .destructive, handler: { _ in
+            
+            guard let newName = alert.textFields?[0].text, !newName.isEmpty else {
+                handler(false)
+                return
+            }
+            
+            //TODO: RENAME API
+            self.tableView.beginUpdates()
+            self.items?[index].name = newName
+            self.tableView.reloadRows(at: [IndexPath(row: index + 1, section: 0)], with: .fade)
+            self.tableView.endUpdates()
+            handler(true)
+            
+        }))
+        
+        present(alert, animated: true, completion: nil)
+        
     }
     
 }

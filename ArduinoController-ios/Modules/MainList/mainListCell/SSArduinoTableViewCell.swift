@@ -28,7 +28,6 @@ class SSArduinoTableViewCell: UITableViewCell {
         self.descLabel.text = arduino.description ?? "-"
         
         self.separatorView.isHidden = isLast
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -4,17 +4,18 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsProfileCell" rowHeight="175" id="KGk-i7-Jjw" customClass="SSSettingsProfileTableViewCell" customModule="ArduinoController_ios" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsProfileCell" rowHeight="237" id="KGk-i7-Jjw" customClass="SSSettingsProfileTableViewCell" customModule="ArduinoController_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="237"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="237"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KfA-yV-QjY">
@@ -24,19 +25,34 @@
                             <constraint firstAttribute="height" constant="150" id="egI-YQ-488"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="VQB-9d-bpd">
+                        <rect key="frame" x="26" y="175" width="268" height="31"/>
+                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="32"/>
+                        <color key="textColor" name="NormalTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="KfA-yV-QjY" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="A9u-BC-sHT"/>
-                    <constraint firstAttribute="bottom" secondItem="KfA-yV-QjY" secondAttribute="bottom" constant="10" id="Aci-cC-aMn"/>
                     <constraint firstItem="KfA-yV-QjY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="OBV-Kn-pfS"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="VQB-9d-bpd" secondAttribute="bottom" constant="20" id="rIP-rm-0ns"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="VQB-9d-bpd" secondAttribute="trailing" constant="10" id="rRW-lr-AzY"/>
+                    <constraint firstItem="VQB-9d-bpd" firstAttribute="top" secondItem="KfA-yV-QjY" secondAttribute="bottom" constant="15" id="riG-Qb-fYl"/>
+                    <constraint firstItem="VQB-9d-bpd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="zKD-EK-17e"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="nameLabel" destination="VQB-9d-bpd" id="8jg-98-y7E"/>
                 <outlet property="profileImageView" destination="KfA-yV-QjY" id="2fp-Fx-BCT"/>
             </connections>
-            <point key="canvasLocation" x="31.884057971014496" y="173.77232142857142"/>
+            <point key="canvasLocation" x="31.884057971014496" y="194.53125"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="NormalTextColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

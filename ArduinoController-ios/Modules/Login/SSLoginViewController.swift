@@ -54,22 +54,8 @@ class SSLoginViewController: UIViewController {
         
         fields.forEach({
             if let field = $0 {
-                field.attributedPlaceholder = NSAttributedString(string: field.placeholder?.localized ?? "", attributes: [NSAttributedString.Key.foregroundColor: SSColors.accent2.color.withAlphaComponent(0.3)])
-                
                 field.delegate = self
-                
-                let separator = UIView()
-                field.addSubview(separator)
-                
-                separator.tag = SSViewTags.textFieldSeparator.rawValue
-                separator.translatesAutoresizingMaskIntoConstraints = false
-                separator.backgroundColor = SSColors.accent2.color.withAlphaComponent(0.7)
-                NSLayoutConstraint.activate([
-                    separator.heightAnchor.constraint(equalToConstant: 1.0),
-                    separator.bottomAnchor.constraint(equalTo: field.bottomAnchor),
-                    separator.leadingAnchor.constraint(equalTo: field.leadingAnchor, constant: -5),
-                    separator.trailingAnchor.constraint(equalTo: field.trailingAnchor, constant: -5)
-                ])
+                field.makeItPretty()
             }
         })
     }
@@ -106,7 +92,7 @@ class SSLoginViewController: UIViewController {
     @IBAction func submitButtonPressed(_ sender: UIButton) {
         
         //Validation
-        guard let username = usernameTextfield.text, username.count > 4 else {
+        guard let username = usernameTextfield.text, username.count > 3 else {
             invalidateTextField(usernameTextfield)
             showError(message: "username.short")
             return

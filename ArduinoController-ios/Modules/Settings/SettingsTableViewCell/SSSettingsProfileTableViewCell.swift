@@ -10,6 +10,7 @@ import UIKit
 class SSSettingsProfileTableViewCell: UITableViewCell {
     
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,12 +22,10 @@ class SSSettingsProfileTableViewCell: UITableViewCell {
         profileImageView.clipsToBounds = true
         profileImageView.layer.borderWidth = 5.0
         profileImageView.layer.borderColor = SSColors.accent.color.cgColor
+        
+        nameLabel.text = SSUserManager.name
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    override func setSelected(_ selected: Bool, animated: Bool) {}
     
 }

@@ -49,12 +49,14 @@ class SSProfileViewController: UIViewController {
     }
 
     @IBAction func onSavedPressed(_ sender: Any) {
-        saveButton.loading.start(.circle(line: SSColors.accent.color, line: 2.0), tag: SSViewTags.loadingIndicator.rawValue)
-        saveButton.titleLabel?.isHidden = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            self.saveButton.loading.stop(SSViewTags.loadingIndicator.rawValue)
-            self.saveButton.titleLabel?.isHidden = false
-        })
+        
+        saveButton.showLoading(show: true)
+            //Validate
+        //TODO
+        
+        SSNavigationController.shared.showBottomPopUpAlert(withTitle: "Editing profile info will be available in the next version", alertState: .failure)
+        
+        
     }
     
 }

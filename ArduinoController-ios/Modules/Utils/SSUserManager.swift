@@ -9,9 +9,6 @@ import Foundation
 
 class SSUserManager {
     
-    static var sessionToken: String?
-    static var name: String?
-    
     public static var isLoggedIn: Bool {
         get {
             if let isLoggedIn = SSUserDefault.getValue(key: .isLoggedIn) as? Bool {
@@ -22,6 +19,16 @@ class SSUserManager {
             }
         }
     }
+    
+    public static var name: String? {
+        return SSUserDefault.getValue(key: .name) as? String
+    }
+    
+    public static var sessionToken: String? {
+        return SSUserDefault.getValue(key: .sessionToken) as? String
+    }
+    
+    //MARK: - Functions
     
     public static func logoutUser() {
         SSUserDefault.setValue(false, key: .isLoggedIn)

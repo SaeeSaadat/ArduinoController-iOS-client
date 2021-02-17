@@ -21,7 +21,8 @@
 
 //Mark: - Messages and Errors
 
-"load_again" = "Loading Failed, Try Again?";
+"load.again" = "Loading Failed, Try Again?";
+"try.again" = "Try again";
 
 //Mark: - Settings
 
@@ -43,7 +44,7 @@
 "switch.desc.sign.up" = "Already have an account?";
 "switch.desc.sign.in" = "Don't have an account?";
 
-"username.short" = "Username must be atleast 5 letters";
+"username.short" = "Username must be atleast 4 letters";
 "password.rule" = "Password must include atleast 1 capital letter and 1 special character";
 "email.invalid" = "Please enter a valid email address! it doesn't really matter! but please do!";
 "confirm.password.error" = "Password confirmation is incorrect";
@@ -53,3 +54,11 @@
 
 "delte.arduino" = "Delete Arduino";
 "delte.arduino.message" = "Are you sure you want to delete: ";
+
+"rename.arduino" = "Rename Arduino";
+"rename.arduino.message" = "Please enter the new name";
+
+"add.arduino.desc" = "Please provide required information about your device.";
+"submit" = "Submit";
+
+
