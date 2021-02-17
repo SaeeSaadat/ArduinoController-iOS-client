@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SmileLock
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -43,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         switch self.level {
         case 0:
             navigation.setRootViewController(vc: navigation.findViewController(page: .login))
+        case 1:
+            presentLocker(create: !SSUserManager.hasLock)
         default:
             let vc = SSMainTabBarController()
             navigation.setRootViewController(vc: vc)
@@ -57,8 +60,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func signin(username: String, sessionToken: String) {
         SSUserManager.loginUser(username: username, sessionToken: sessionToken)
-        self.level = 1
-        SSNavigationController.shared.setRootViewController(vc: SSMainTabBarController(), animated: true)
+        self.level = 2
+        presentLocker(create: true)
+    }
+    
+    func presentLocker(create: Bool) {
+        let vc = SSPasscodeViewController()
+        vc.createPasscode = create
+        vc.passcodeCreatedFunc = {
+            self.level = 2
+            SSUserManager.hasLock = true
+            self.setRoot(navigation: SSNavigationController.shared)
+        }
+        
+        vc.validationSuccessFunc = {
+            self.level = 2
+            self.setRoot(navigation: SSNavigationController.shared)
+        }
+        
+//        vc.modalPresentationStyle = .overCurrentContext
+        SSNavigationController.shared.setRootViewController(vc: vc, animated: true)
     }
 
     // MARK: UISceneSession Lifecycle

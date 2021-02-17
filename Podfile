@@ -7,7 +7,7 @@ target 'ArduinoController-ios' do
 
   # Pods for ArduinoController-ios
 	pod 'Parse'
-	pod 'AppLocker'
+	pod 'SmileLock'
 	pod 'Loading'
 	pod 'JellyGif'
 

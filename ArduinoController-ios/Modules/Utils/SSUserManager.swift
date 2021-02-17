@@ -20,6 +20,20 @@ class SSUserManager {
         }
     }
     
+    public static var hasLock: Bool {
+        get {
+            if let hasLock = SSUserDefault.getValue(key: .hasApplock) as? Bool {
+                return hasLock
+            }else {
+                SSUserDefault.setValue(false, key: .hasApplock)
+                return false
+            }
+        }
+        set {
+            SSUserDefault.setValue(newValue, key: .hasApplock)
+        }
+    }
+    
     public static var name: String? {
         return SSUserDefault.getValue(key: .name) as? String
     }
@@ -34,11 +48,24 @@ class SSUserManager {
         SSUserDefault.setValue(false, key: .isLoggedIn)
         SSUserDefault.setValue(nil, key: .name)
         SSUserDefault.setValue(nil, key: .sessionToken)
+        SSUserDefault.setValue(false, key: .hasApplock)
+        SSUserDefault.setValue(nil, key: .passcode)
     }
     
     public static func loginUser(username: String, sessionToken: String) {
         SSUserDefault.setValue(username, key: .name)
         SSUserDefault.setValue(sessionToken, key: .sessionToken)
         SSUserDefault.setValue(true, key: .isLoggedIn)
+    }
+    
+    public static func checkPasscode (input: String) -> Bool {
+        guard let code = SSUserDefault.getValue(key: .passcode) as? String else {
+            return false
+        }
+        return input == code
+    }
+    
+    public static func setPasscode(input: String) {
+        SSUserDefault.setValue(input, key: .passcode)
     }
 }

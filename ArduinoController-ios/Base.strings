@@ -64,3 +64,5 @@
 "arduino.controller.desc" = "Here are all the things your arduino is designed to do:";
 "empty.tableview" = "Just a useless functionless Robot!";
 
+"create.passcode" = "Set your passcode";
+"enter.passcode" = "Enter your passcode";

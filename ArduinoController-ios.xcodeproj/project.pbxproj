@@ -20,6 +20,7 @@
 		5B383D5F25D9D51A00167696 /* SSProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B383D5D25D9D51A00167696 /* SSProfileViewController.swift */; };
 		5B383D6325D9D54500167696 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B383D6225D9D54500167696 /* Profile.storyboard */; };
 		5B383D9C25D9F07A00167696 /* SSBottomPopUpAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B383D9A25D9EFB100167696 /* SSBottomPopUpAlert.xib */; };
+		5B62522325DD84D80058C489 /* SSPasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62522225DD84D80058C489 /* SSPasscodeViewController.swift */; };
 		5B62718725D82BFE00FE913D /* SSAddArduinoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B62718625D82BFE00FE913D /* SSAddArduinoTableViewCell.xib */; };
 		5B62718B25D82DEC00FE913D /* SSMainThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62718A25D82DEC00FE913D /* SSMainThemeColors.swift */; };
 		5B835DB025D6D7E000EBEAF3 /* SSSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B835DAF25D6D7E000EBEAF3 /* SSSettingsViewController.swift */; };
@@ -77,6 +78,7 @@
 		5B383D5D25D9D51A00167696 /* SSProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSProfileViewController.swift; sourceTree = "<group>"; };
 		5B383D6225D9D54500167696 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		5B383D9A25D9EFB100167696 /* SSBottomPopUpAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSBottomPopUpAlert.xib; sourceTree = "<group>"; };
+		5B62522225DD84D80058C489 /* SSPasscodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSPasscodeViewController.swift; sourceTree = "<group>"; };
 		5B62718625D82BFE00FE913D /* SSAddArduinoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSAddArduinoTableViewCell.xib; sourceTree = "<group>"; };
 		5B62718A25D82DEC00FE913D /* SSMainThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSMainThemeColors.swift; sourceTree = "<group>"; };
 		5B835DAF25D6D7E000EBEAF3 /* SSSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSettingsViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,23 @@
 			path = popup;
 			sourceTree = "<group>";
 		};
+		5B62522025DD83DF0058C489 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5BE952C325DD71D4003F1FE4 /* tick.gif */,
+				5BE952C725DD766E003F1FE4 /* xmark.gif */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5B62522125DD84B80058C489 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				5B62522225DD84D80058C489 /* SSPasscodeViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		5B62718925D82DDF00FE913D /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				5BBD9A2125B977BF00A191AE /* ArduinoController-ios */,
+				5B62522025DD83DF0058C489 /* Resources */,
 				5BBD9A2025B977BF00A191AE /* Products */,
 				117C8DA2014C185FE578B681 /* Pods */,
 				8B38D9756E38AC659B24007A /* Frameworks */,
@@ -284,8 +304,6 @@
 		5BBD9A2125B977BF00A191AE /* ArduinoController-ios */ = {
 			isa = PBXGroup;
 			children = (
-				5BE952C725DD766E003F1FE4 /* xmark.gif */,
-				5BE952C325DD71D4003F1FE4 /* tick.gif */,
 				5B85120225DC972F00C00035 /* Models */,
 				5BBD9A3725B97C3D00A191AE /* Modules */,
 				5BBD9A2225B977BF00A191AE /* AppDelegate.swift */,
@@ -302,6 +320,7 @@
 		5BBD9A3725B97C3D00A191AE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5B62522125DD84B80058C489 /* Authentication */,
 				5B85120925DD15B700C00035 /* Arduino Pages */,
 				5B835DAE25D6D7C900EBEAF3 /* AboutUs */,
 				5B835DAC25D6D7BE00EBEAF3 /* Settings */,
@@ -527,6 +546,7 @@
 				5BBD9A3A25B97C6E00A191AE /* SSNavigationController.swift in Sources */,
 				5BBD9A2325B977BF00A191AE /* AppDelegate.swift in Sources */,
 				5BE952CC25DD78A5003F1FE4 /* SSAddArduinoTableViewCell.swift in Sources */,
+				5B62522325DD84D80058C489 /* SSPasscodeViewController.swift in Sources */,
 				5B835DBD25D6F80200EBEAF3 /* SSExtension + UIViewController.swift in Sources */,
 				5B2B111525DD1B7900D82845 /* SSExtension + UITextField.swift in Sources */,
 				5B383D5F25D9D51A00167696 /* SSProfileViewController.swift in Sources */,
