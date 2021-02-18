@@ -123,12 +123,17 @@ extension SSMainListViewController: UITableViewDelegate, UITableViewDataSource {
             handler(false)
         }))
         
-        alert.addAction(UIAlertAction(title: "yes".localized, style: .default, handler: { _ in
-            //TODO: DELETE API
-            self.tableView.beginUpdates()
-            self.tableView.deleteRows(at: [IndexPath(row: index + 1, section: 0)], with: .left)
-            self.items?.remove(at: index)
-            self.tableView.endUpdates()
+        alert.addAction(UIAlertAction(title: "yes".localized, style: .destructive, handler: { _ in
+            
+            SSParseArduinoManager.deleteArduino(arduino: arduino, success: {
+                self.tableView.beginUpdates()
+                self.tableView.deleteRows(at: [IndexPath(row: index + 1, section: 0)], with: .left)
+                self.items?.remove(at: index)
+                self.tableView.endUpdates()
+            }, fail: { error in
+                SSNavigationController.shared.showBottomPopUpAlert(withTitle: error?.localizedDescription ?? "unknown.error".localized, alertState: .failure)
+                handler(false)
+            })
             
         }))
         
@@ -142,23 +147,28 @@ extension SSMainListViewController: UITableViewDelegate, UITableViewDataSource {
         alert.addTextField(configurationHandler: { textField in
             textField.placeholder = "New Name"
         })
-        alert.addAction(UIAlertAction(title: "Cancel".localized, style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: { _ in
             handler(false)
         }))
         
-        alert.addAction(UIAlertAction(title: "Ok".localized, style: .destructive, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Ok".localized, style: .default, handler: { _ in
             
             guard let newName = alert.textFields?[0].text, !newName.isEmpty else {
                 handler(false)
                 return
             }
             
-            //TODO: RENAME API
-            self.tableView.beginUpdates()
-            self.items?[index].name = newName
-            self.tableView.reloadRows(at: [IndexPath(row: index + 1, section: 0)], with: .fade)
-            self.tableView.endUpdates()
-            handler(true)
+            SSParseArduinoManager.renameArduino(arduino: arduino, newName: newName, success: {
+                self.tableView.beginUpdates()
+                self.items?[index].name = newName
+                self.tableView.reloadRows(at: [IndexPath(row: index + 1, section: 0)], with: .fade)
+                self.tableView.endUpdates()
+                handler(true)
+            }, fail: { error in
+                SSNavigationController.shared.showBottomPopUpAlert(withTitle: error?.localizedDescription ?? "unknown.error".localized, alertState: .failure)
+                handler(false)
+            })
+            
             
         }))
         

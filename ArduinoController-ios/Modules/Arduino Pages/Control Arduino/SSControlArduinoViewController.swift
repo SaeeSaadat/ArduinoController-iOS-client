@@ -60,8 +60,6 @@ class SSControlArduinoViewController: UIViewController {
         tableView.register(UINib(nibName: "SSArduinoFunctionTableViewCell", bundle: nil), forCellReuseIdentifier: "functionCell")
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
     }
 
 }
@@ -97,8 +95,12 @@ extension SSControlArduinoViewController: UITableViewDelegate, UITableViewDataSo
         return cell
     }
     
-    
-    
-    
-    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard indexPath.row != 0 else { return nil }
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete".localized, handler: {_,_,handler in
+            handler(true)
+        })
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
 }

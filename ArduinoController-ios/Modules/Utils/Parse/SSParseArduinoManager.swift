@@ -95,7 +95,45 @@ class SSParseArduinoManager {
                     }
                 }
             }
-                
+        }
+    }
+    
+    public static func deleteArduino(arduino: SSArduinoModel, success: (() -> Void)?, fail: ((Error?) -> Void)?) {
+        guard let id = arduino.uniqueId else { return }
+        PFQuery(className: "Arduino").getObjectInBackground(withId: id) { object, error in
+            if let error = error {
+                fail?(error)
+                return
+            }
+            object?.deleteInBackground { succeed, error in
+                if let error = error {
+                    fail?(error)
+                    return
+                }
+                if (succeed) {
+                    success?()
+                }
+            }
+        }
+    }
+    
+    public static func renameArduino(arduino: SSArduinoModel, newName: String, success: (() -> Void)?, fail: ((Error?) -> Void)?) {
+        guard let id = arduino.uniqueId else { return }
+        PFQuery(className: "Arduino").getObjectInBackground(withId: id) { object, error in
+            if let error = error {
+                fail?(error)
+                return
+            } else if let object = object {
+                object["name"] = newName
+                object.saveInBackground { succeed, error in
+                    if let error = error {
+                        fail?(error)
+                        return
+                    } else if succeed {
+                        success?()
+                    }
+                }
+            }
             
         }
     }
