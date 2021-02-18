@@ -119,7 +119,7 @@
     <resources>
         <image name="Mini-Robot" width="600" height="600"/>
         <image name="arduinoLogo-color" width="1390" height="960"/>
-        <image name="icon-email" width="80" height="80"/>
+        <image name="icon-email" width="68" height="66"/>
         <image name="icon-github" width="64" height="64"/>
         <image name="icon-telegram" width="64" height="64"/>
         <image name="icon-twitter" width="100" height="100"/>

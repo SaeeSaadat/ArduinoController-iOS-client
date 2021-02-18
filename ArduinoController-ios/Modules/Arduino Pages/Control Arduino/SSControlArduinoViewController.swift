@@ -87,11 +87,14 @@ extension SSControlArduinoViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "functionCell") as? SSArduinoFunctionTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "functionCell") as? SSArduinoFunctionTableViewCell,
+              let arduino = model,
+              indexPath.section < functions.count
+              else {
             return UITableViewCell()
         }
         let index = indexPath.section
-        cell.setupCell(model: functions[index], index: index)
+        cell.setupCell(model: functions[index], arduino: arduino, index: index)
         return cell
     }
     

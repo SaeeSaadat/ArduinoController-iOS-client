@@ -7,6 +7,7 @@
 
 import UIKit
 import JellyGif
+import Parse
 
 class SSArduinoFunctionTableViewCell: UITableViewCell {
 
@@ -21,12 +22,19 @@ class SSArduinoFunctionTableViewCell: UITableViewCell {
     
     private var checkView: JellyGifImageView?
     private var isPerforming: Bool = false
+    
+    private var arduino: SSArduinoModel?
+    private var function: SSArduinoFunction?
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func setupCell(model: SSArduinoFunction, index: Int) {
+    func setupCell(model: SSArduinoFunction, arduino: SSArduinoModel, index: Int) {
+        
+        self.arduino = arduino
+        self.function = model
+        
         nameLabel.text = model.name
         
         let accentColor = (index % 2 == 0) ? SSColors.accent.color : SSColors.accent2.color
@@ -64,13 +72,17 @@ class SSArduinoFunctionTableViewCell: UITableViewCell {
         })
         
         if selected {
-            //Send API
+            guard let id = self.arduino?.uniqueId, let signal = self.function?.signalCode else { return }
             self.isPerforming = true
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                self.appearCheckView(true)
+            PFCloud.callFunction(inBackground: "signalDevice", withParameters: ["arduino": id, "signal": signal]) { response, error in
+                if let response = response as? Bool {
+                    self.appearCheckView(response)
+                } else { 
+                    self.appearCheckView(false)
+                    SSNavigationController.shared.showBottomPopUpAlert(withTitle: error?.localizedDescription ?? "unknown.error".localized, alertState: .failure)
+                }
                 self.receivedResponse()
-            })
+            }
             
         }
     }
