@@ -65,13 +65,20 @@ class SSMainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
+        let scrollToTop = viewController == tabBarController.selectedViewController
         switch viewController {
         case SSMainTabBarController.mainListController:
             self.SSTitle = "mainListTitle".localized
+            if (scrollToTop) {
+                (SSMainTabBarController.mainListController as? SSMainListViewController)?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            }
         case SSMainTabBarController.aboutUsController:
             self.SSTitle = "aboutUsTitle".localized
         case SSMainTabBarController.settingsController:
             self.SSTitle = "settingsTitle".localized
+            if (scrollToTop) {
+                (SSMainTabBarController.settingsController as? SSSettingsViewController)?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            }
         default:
             self.SSTitle = "AWKWARD!".localized
         }
