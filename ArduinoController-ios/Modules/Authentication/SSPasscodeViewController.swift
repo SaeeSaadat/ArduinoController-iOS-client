@@ -33,12 +33,15 @@ class SSPasscodeViewController: UIViewController {
         passwordContainerView = PasswordContainerView.create(in: passwordStackView, digit: kPasswordDigit)
         passwordContainerView.delegate = self
         passwordContainerView.deleteButton.setTitle("Delete", for: .normal)
-        passwordContainerView.tintColor = SSColors.accent.color
+        passwordContainerView.tintColor = SSColors.accent2.color
         passwordContainerView.highlightedColor = SSColors.accent.color
+        passwordContainerView.isVibrancyEffect = true
         
         self.view.backgroundColor = SSColors.background2.color
         
         passwordContainerView.touchAuthenticationEnabled = !createPasscode
+        
+        addBottomButton()
         
     }
     
@@ -47,6 +50,7 @@ class SSPasscodeViewController: UIViewController {
         passwordStackView.alignment = .center
         passwordStackView.axis = .vertical
         passwordStackView.translatesAutoresizingMaskIntoConstraints = false
+        passwordStackView.spacing = 50
         
         self.view.addSubview(passwordStackView)
         
@@ -61,8 +65,33 @@ class SSPasscodeViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = createPasscode ? "create.passcode".localized : "enter.passcode".localized
         label.textColor = SSColors.accent.color
-        label.font = SSFont.titleFont(15)
-        passwordStackView.addSubview(label)
+        label.font = SSFont.titleFont(35)
+        passwordStackView.addArrangedSubview(label)
+    }
+    
+    private func addBottomButton() {
+        
+        let logoutButton = UIButton()
+        logoutButton.translatesAutoresizingMaskIntoConstraints = false
+        logoutButton.setTitle("LogOut".localized, for: .normal)
+        logoutButton.titleLabel?.textColor = SSColors.accent.color
+        logoutButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        
+        self.view.addSubview(logoutButton)
+        
+        NSLayoutConstraint.activate([
+            logoutButton.heightAnchor.constraint(equalToConstant: 50),
+            logoutButton.widthAnchor.constraint(equalToConstant: 150),
+            logoutButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20),
+            logoutButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        ])
+        
+        logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
+        
+    }
+    
+    @objc private func logout() {
+        (UIApplication.shared.delegate as? AppDelegate)?.logout()
     }
 
 }

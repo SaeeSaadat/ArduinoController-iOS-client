@@ -47,9 +47,9 @@ class SSControlArduinoViewController: UIViewController {
         
         SSParseArduinoManager.loadArduino(arduino: model, success: { [weak self] arduino in
             self?.model = arduino
+            self?.isLoading = false
             self?.tableView.reloadData()
             self?.tableView.loading.stop(SSViewTags.loadingIndicator.rawValue)
-            self?.isLoading = false
         }, fail: { error in
             SSNavigationController.shared.showBottomPopUpAlert(withTitle: error?.localizedDescription ?? "unknown.error".localized, alertState: .failure)
             SSNavigationController.shared.popViewController(animated: true)

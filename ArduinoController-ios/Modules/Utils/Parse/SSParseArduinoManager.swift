@@ -93,6 +93,9 @@ class SSParseArduinoManager {
                         arduino.functions = funcs
                         success?(arduino)
                     }
+                } else {
+                    arduino.functions = []
+                    success?(arduino)
                 }
             }
         }

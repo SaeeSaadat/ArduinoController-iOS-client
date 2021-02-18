@@ -64,14 +64,18 @@ class SSMainListViewController: UIViewController {
 
 extension SSMainListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return (items?.count ?? 0) + 1
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             SSNavigationController.shared.pushViewController(SSAddArduinoViewController(), animated: true)
         } else {
-            let index = indexPath.row - 1
+            let index = indexPath.section - 1
             guard let arduino = items?[index] else { return }
             
             let vc = SSControlArduinoViewController()
@@ -83,7 +87,7 @@ extension SSMainListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let index = indexPath.row
+        let index = indexPath.section
         
         var cell = UITableViewCell()
         cell.layer.cornerRadius = 10.0
@@ -103,14 +107,20 @@ extension SSMainListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        guard indexPath.row != 0 else { return nil }
+        guard indexPath.section != 0 else { return nil }
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete".localized, handler: {_,_,handler in
-            self.showDeleteDialog(index: indexPath.row - 1, handler: handler)
+            self.showDeleteDialog(index: indexPath.section - 1, handler: handler)
         })
         
         let renameAction = UIContextualAction(style: .normal, title: "Rename".localized, handler: { _,_,handler in
-            self.showRenameDialog(index: indexPath.row - 1, handler: handler)
+            self.showRenameDialog(index: indexPath.section - 1, handler: handler)
         })
+        
+        renameAction.backgroundColor = SSColors.background3.color
+        renameAction.image = UIImage(named: "icon-edit")
+        
+        deleteAction.backgroundColor = SSColors.redBackground.color
+        deleteAction.image = UIImage(named: "icon-trash")
         
         return UISwipeActionsConfiguration(actions: [deleteAction, renameAction])
     }
@@ -127,7 +137,7 @@ extension SSMainListViewController: UITableViewDelegate, UITableViewDataSource {
             
             SSParseArduinoManager.deleteArduino(arduino: arduino, success: {
                 self.tableView.beginUpdates()
-                self.tableView.deleteRows(at: [IndexPath(row: index + 1, section: 0)], with: .left)
+                self.tableView.deleteSections([index + 1], with: .left)
                 self.items?.remove(at: index)
                 self.tableView.endUpdates()
             }, fail: { error in
@@ -144,6 +154,9 @@ extension SSMainListViewController: UITableViewDelegate, UITableViewDataSource {
      
         guard let arduino = items?[index] else { return }
         let alert = UIAlertController(title: "rename.arduino".localized, message: "rename.arduino.message".localized + (arduino.name ?? " - "), preferredStyle: .alert)
+        
+        alert.view.backgroundColor = SSColors.background3.color
+        
         alert.addTextField(configurationHandler: { textField in
             textField.placeholder = "New Name"
         })
@@ -161,7 +174,7 @@ extension SSMainListViewController: UITableViewDelegate, UITableViewDataSource {
             SSParseArduinoManager.renameArduino(arduino: arduino, newName: newName, success: {
                 self.tableView.beginUpdates()
                 self.items?[index].name = newName
-                self.tableView.reloadRows(at: [IndexPath(row: index + 1, section: 0)], with: .fade)
+                self.tableView.reloadSections([index + 1], with: .fade)
                 self.tableView.endUpdates()
                 handler(true)
             }, fail: { error in
@@ -174,6 +187,16 @@ extension SSMainListViewController: UITableViewDelegate, UITableViewDataSource {
         
         present(alert, animated: true, completion: nil)
         
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = .clear
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 0 ? 0 : 10
     }
     
 }
