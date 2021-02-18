@@ -32,14 +32,16 @@ class SSProfileViewController: UIViewController {
         //TODO: Avatar -> next versions
         
         nameTextField.text = SSUserManager.name
+        nameTextField.isUserInteractionEnabled = false
         
         let textFields = [nameTextField, oldPasswordTextField, passwordTextField, confirmPasswordTextField]
         
         textFields.forEach({ textField in
-            textField?.borderStyle = .roundedRect
-            textField?.layer.borderWidth = 1.0
-            textField?.layer.borderColor = SSColors.accent2.color.cgColor
-            textField?.layer.cornerRadius = 5.0
+            textField?.makeItPretty()
+//            textField?.borderStyle = .roundedRect
+//            textField?.layer.borderWidth = 1.0
+//            textField?.layer.borderColor = SSColors.accent2.color.cgColor
+//            textField?.layer.cornerRadius = 5.0
             textField?.attributedPlaceholder = NSAttributedString(string: (textField?.placeholder ?? "").localized, attributes: [NSAttributedString.Key.foregroundColor : SSColors.accent2.color.withAlphaComponent(0.3)])
         })
         
@@ -50,13 +52,57 @@ class SSProfileViewController: UIViewController {
 
     @IBAction func onSavedPressed(_ sender: Any) {
         
+        guard let oldPassword = oldPasswordTextField.text, !oldPassword.isEmpty else {
+            invalidateTextField(oldPasswordTextField)
+            showError(message: "empty.field")
+            return
+        }
+        
+        guard let password = passwordTextField.text, checkPassword(password) else {
+            invalidateTextField(passwordTextField)
+            showError(message: "password.rule")
+            return
+        }
+        
+        guard let passwordConf = confirmPasswordTextField.text, password == passwordConf else {
+            invalidateTextField(confirmPasswordTextField)
+            showError(message: "confirm.password.error")
+            return
+        }
+        
         saveButton.showLoading(show: true)
-            //Validate
-        //TODO
         
-        SSNavigationController.shared.showBottomPopUpAlert(withTitle: "Editing profile info will be available in the next version", alertState: .failure)
+        SSParseUserManager.changePassword(newPassword: password, oldPassword: oldPassword, onSuccess: {
+            SSNavigationController.shared.showBottomPopUpAlert(withTitle: "success".localized, alertState: .success)
+            [self.passwordTextField, self.confirmPasswordTextField, self.oldPasswordTextField].forEach({
+                $0.text = nil
+            })
+            self.saveButton.showLoading(show: false)
+        }, onFailed: { error in
+            SSNavigationController.shared.showBottomPopUpAlert(withTitle: error?.localizedDescription ?? "unknown.error", alertState: .failure)
+            self.saveButton.showLoading(show: false)
+        })
         
         
+    }
+    
+    private func checkPassword(_ password: String) -> Bool {
+        let checker = NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[a-z])(?=.*[$@$#!%*?&])(?=.*[A-Z]).{5,}$")
+        return checker.evaluate(with: password)
+    }
+    
+    private func invalidateTextField(_ field: UITextField) {
+        guard let line = field.viewWithTag(SSViewTags.textFieldSeparator.rawValue) else { return }
+        line.backgroundColor = SSColors.errorRed.color.withAlphaComponent(0.7)
+    }
+    
+    private func validateTextField(_ field: UITextField) {
+        guard let line = field.viewWithTag(SSViewTags.textFieldSeparator.rawValue) else { return }
+        line.backgroundColor = SSColors.accent2.color.withAlphaComponent(0.7)
+    }
+    
+    private func showError(message: String) {
+        SSNavigationController.shared.showBottomPopUpAlert(withTitle: message.localized, alertState: .failure)
     }
     
 }

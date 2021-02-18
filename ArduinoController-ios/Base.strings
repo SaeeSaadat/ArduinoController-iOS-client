@@ -49,6 +49,7 @@
 "password.rule" = "Password must include atleast 1 capital letter and 1 special character";
 "email.invalid" = "Please enter a valid email address! it doesn't really matter! but please do!";
 "confirm.password.error" = "Password confirmation is incorrect";
+"empty.field" = "Please fill the form first!";
 
 
 //Mark: - arduinos

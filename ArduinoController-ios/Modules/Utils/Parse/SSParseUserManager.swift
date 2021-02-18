@@ -39,4 +39,24 @@ class SSParseUserManager {
     public static func logout() {
         PFUser.logOut()
     }
+    
+    public static func changePassword(newPassword: String, oldPassword: String,  onSuccess: (() -> Void)?, onFailed: ((Error?) -> Void)?) {
+        guard let name = SSUserManager.name else { return }
+        PFUser.logInWithUsername(inBackground: name, password: oldPassword) { user, error in
+            if let user = user {
+                user.password = newPassword
+                user.saveInBackground() { succeed, error in
+                    if succeed {
+                        onSuccess?()
+                    } else {
+                        onFailed?(error)
+                    }
+                }
+            } else {
+                onFailed?(error)
+            }
+            
+        }
+    }
+    
 }

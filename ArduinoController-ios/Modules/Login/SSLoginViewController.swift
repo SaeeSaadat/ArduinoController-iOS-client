@@ -162,7 +162,7 @@ class SSLoginViewController: UIViewController {
 extension SSLoginViewController {
     
     private func checkPassword(_ password: String) -> Bool {
-        let checker = NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[a-z])(?=.*[$@$#!%*?&])(?=.*[A-Z]).{6,}$")
+        let checker = NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[a-z])(?=.*[$@$#!%*?&])(?=.*[A-Z]).{5,}$")
         return checker.evaluate(with: password)
     }
     
