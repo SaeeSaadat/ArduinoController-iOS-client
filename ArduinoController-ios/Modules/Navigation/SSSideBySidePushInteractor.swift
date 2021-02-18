@@ -14,7 +14,7 @@ protocol NavigationInteractionProxy {
 class SSSideBySidePushInteractor: UIPercentDrivenInteractiveTransition, NavigationInteractionProxy {
     
     private weak var navigationController: SSNavigationController?
-    let transitionCompletionThreshold: CGFloat = 0.1
+    let transitionCompletionThreshold: CGFloat = 0.4
     var completion: (() -> Void)?
     var viewController: UIViewController?
     private var edge: UIRectEdge = .right
@@ -69,9 +69,9 @@ class SSSideBySidePushInteractor: UIPercentDrivenInteractiveTransition, Navigati
                 finish()
                 return
             } else if -c * gesture.velocity(in: gesture.view).x > -c * 300 {
-                cancelTransition(progress: transitionProgress)
-                isPerforming = false
-                return
+//                cancelTransition(progress: transitionProgress)
+//                isPerforming = false
+//                return
             }
             isPerforming = false
             transitionProgress > transitionCompletionThreshold ? finish() : cancelTransition(progress: transitionProgress)
