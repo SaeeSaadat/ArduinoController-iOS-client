@@ -16,10 +16,12 @@ class SSControlArduinoViewController: UIViewController {
     var functions: [SSArduinoFunction] {
         return self.model?.functions ?? []
     }
+    private var isLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        loadModel()
     }
     
     func setupModel(model: SSArduinoModel) {
@@ -31,6 +33,27 @@ class SSControlArduinoViewController: UIViewController {
         self.SSTitle = self.model?.name
         setupTableView()
         
+    }
+    
+    private func loadModel() {
+        guard let model = self.model else { return }
+        
+        tableView.loading.start(
+            .rotate(#imageLiteral(resourceName: "loading_indecator").withTintColor(SSColors.accent.color), at: 50),
+            .text("load.again".localized, font: SSFont.errorFont(), color: .red),
+            tag: SSViewTags.loadingIndicator.rawValue
+        )
+        isLoading = true
+        
+        SSParseArduinoManager.loadArduino(arduino: model, success: { [weak self] arduino in
+            self?.model = arduino
+            self?.tableView.reloadData()
+            self?.tableView.loading.stop(SSViewTags.loadingIndicator.rawValue)
+            self?.isLoading = false
+        }, fail: { error in
+            SSNavigationController.shared.showBottomPopUpAlert(withTitle: error?.localizedDescription ?? "unknown.error".localized, alertState: .failure)
+            SSNavigationController.shared.popViewController(animated: true)
+        })
     }
     
     private func setupTableView() {
@@ -47,7 +70,7 @@ extension SSControlArduinoViewController: UITableViewDelegate, UITableViewDataSo
     
     func numberOfSections(in tableView: UITableView) -> Int {
         let count = functions.count
-        self.emptyView.isHidden = (count != 0)
+        self.emptyView.isHidden = (count != 0 || self.isLoading)
         return count
     }
     

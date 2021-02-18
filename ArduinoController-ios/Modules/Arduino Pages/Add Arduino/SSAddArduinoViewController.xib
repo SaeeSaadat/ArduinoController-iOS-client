@@ -11,10 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SSAddArduinoViewController" customModule="ArduinoController_ios" customModuleProvider="target">
             <connections>
-                <outlet property="activationCodeTextField" destination="jJN-eT-Dun" id="bhY-wp-DBB"/>
                 <outlet property="descLabel" destination="C3k-L2-NEd" id="5Gs-Gi-IXb"/>
+                <outlet property="descriptionTextField" destination="u3j-AD-D2V" id="X9W-or-4LM"/>
                 <outlet property="modelTextField" destination="pvg-zT-TxQ" id="k2h-mN-dx8"/>
                 <outlet property="nameTextField" destination="1X8-aX-xam" id="Lz4-X7-tqE"/>
+                <outlet property="serialNumberTextField" destination="jJN-eT-Dun" id="Of8-JE-sk2"/>
                 <outlet property="submitButton" destination="ZQ8-YJ-VFU" id="1in-It-c5v"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="grc-Lx-cOW">
-                    <rect key="frame" x="15" y="133.5" width="384" height="210"/>
+                    <rect key="frame" x="15" y="133.5" width="384" height="285"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1X8-aX-xam">
                             <rect key="frame" x="0.0" y="0.0" width="384" height="60"/>
@@ -47,11 +48,21 @@
                             <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="22"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Activation Code" textAlignment="natural" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jJN-eT-Dun">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Serial Number" textAlignment="natural" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jJN-eT-Dun">
                             <rect key="frame" x="0.0" y="150" width="384" height="60"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="0T9-5T-wvl"/>
+                            </constraints>
+                            <color key="textColor" name="AccentColor2"/>
+                            <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="22"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="u3j-AD-D2V">
+                            <rect key="frame" x="0.0" y="225" width="384" height="60"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="oNk-pF-psh"/>
                             </constraints>
                             <color key="textColor" name="AccentColor2"/>
                             <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="22"/>
@@ -69,7 +80,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ8-YJ-VFU">
-                    <rect key="frame" x="107" y="393.5" width="200" height="60"/>
+                    <rect key="frame" x="107" y="468.5" width="200" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="ClL-8f-kyI"/>
                         <constraint firstAttribute="width" constant="200" id="Q6L-4s-hJL"/>

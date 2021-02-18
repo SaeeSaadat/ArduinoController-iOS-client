@@ -20,6 +20,8 @@ class SSMainListViewController: UIViewController {
 
         setupTableView()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshList), name: Notification.Name("refreshMainList"), object: nil)
+        
     }
     
 
@@ -47,11 +49,15 @@ class SSMainListViewController: UIViewController {
             self.items = models
             self.tableView.reloadData()
         }, failedCallBack: { error in
-            SSNavigationController.shared.showBottomPopUpAlert(withTitle: error.message?.localized ?? "Error while loading", alertState: .failure)
+            SSNavigationController.shared.showBottomPopUpAlert(withTitle: error.localizedDescription.localized + "Error while loading", alertState: .failure)
             self.tableView.loading.fail(SSViewTags.loadingIndicator.rawValue) {
                 self.loadModels()
             }
         })
+    }
+    
+    @objc private func refreshList() {
+        self.loadModels()
     }
 
 }
