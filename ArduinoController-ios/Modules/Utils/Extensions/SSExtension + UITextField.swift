@@ -25,6 +25,8 @@ extension UITextField {
             separator.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: -5),
             separator.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5)
         ])
+        
+        self.borderStyle = .none
     }
     
 }

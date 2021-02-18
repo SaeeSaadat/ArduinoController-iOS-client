@@ -45,7 +45,7 @@
                                                     <constraint firstAttribute="height" constant="60" id="xTv-HM-ta8"/>
                                                 </constraints>
                                                 <color key="textColor" name="AccentColor2"/>
-                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2GR-6U-BOC" userLabel="Old Password">
@@ -56,7 +56,7 @@
                                                     <constraint firstAttribute="width" constant="300" id="Z99-M6-R1j"/>
                                                 </constraints>
                                                 <color key="textColor" name="AccentColor2"/>
-                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QC7-sb-LR8">
@@ -67,7 +67,7 @@
                                                     <constraint firstAttribute="width" constant="300" id="a2t-B8-aec"/>
                                                 </constraints>
                                                 <color key="textColor" name="AccentColor2"/>
-                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lNK-1W-JbR">
@@ -78,7 +78,7 @@
                                                     <constraint firstAttribute="width" constant="300" id="dNK-1c-3Kg"/>
                                                 </constraints>
                                                 <color key="textColor" name="AccentColor2"/>
-                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPp-s7-sJc">
@@ -122,14 +122,12 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="qsS-ur-iMl" firstAttribute="top" secondItem="rEd-dd-9eP" secondAttribute="top" id="7pG-yT-3hT"/>
-                                    <constraint firstItem="qsS-ur-iMl" firstAttribute="bottom" secondItem="1Qy-FV-edQ" secondAttribute="bottom" id="NH5-DW-tsB"/>
+                                    <constraint firstItem="qsS-ur-iMl" firstAttribute="top" secondItem="4GB-Uc-Qvb" secondAttribute="top" id="7pG-yT-3hT"/>
                                     <constraint firstItem="qsS-ur-iMl" firstAttribute="width" secondItem="4GB-Uc-Qvb" secondAttribute="width" id="Zxg-YK-oLH"/>
+                                    <constraint firstAttribute="bottom" secondItem="qsS-ur-iMl" secondAttribute="bottom" id="duE-SA-TyT"/>
                                     <constraint firstItem="qsS-ur-iMl" firstAttribute="leading" secondItem="4GB-Uc-Qvb" secondAttribute="leading" id="pQR-c0-OsJ"/>
                                     <constraint firstAttribute="trailing" secondItem="qsS-ur-iMl" secondAttribute="trailing" id="uOi-Bg-VXJ"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="1Qy-FV-edQ"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="rEd-dd-9eP"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="F9T-bk-umK"/>

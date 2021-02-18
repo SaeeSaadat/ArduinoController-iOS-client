@@ -38,19 +38,19 @@ class SSProfileViewController: UIViewController {
         
         textFields.forEach({ textField in
             textField?.makeItPretty()
-//            textField?.borderStyle = .roundedRect
-//            textField?.layer.borderWidth = 1.0
-//            textField?.layer.borderColor = SSColors.accent2.color.cgColor
-//            textField?.layer.cornerRadius = 5.0
+            textField?.delegate = self
             textField?.attributedPlaceholder = NSAttributedString(string: (textField?.placeholder ?? "").localized, attributes: [NSAttributedString.Key.foregroundColor : SSColors.accent2.color.withAlphaComponent(0.3)])
         })
         
         saveButton.layer.cornerRadius = 10.0
         scrollView.alwaysBounceVertical = true
+        scrollView.keyboardDismissMode = .onDrag
         
     }
 
     @IBAction func onSavedPressed(_ sender: Any) {
+        
+        self.view.endEditing(false)
         
         guard let oldPassword = oldPasswordTextField.text, !oldPassword.isEmpty else {
             invalidateTextField(oldPasswordTextField)
@@ -106,3 +106,10 @@ class SSProfileViewController: UIViewController {
     }
     
 }
+
+extension SSProfileViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        validateTextField(textField)
+    }
+}
+

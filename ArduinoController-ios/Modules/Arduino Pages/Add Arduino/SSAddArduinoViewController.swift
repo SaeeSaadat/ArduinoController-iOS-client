@@ -63,7 +63,8 @@ class SSAddArduinoViewController: UIViewController {
         })
         
         if flag {
-            SSNavigationController.shared.showBottomPopUpAlert(withTitle: "WRONG", alertState: .failure)
+            SSNavigationController.shared.showBottomPopUpAlert(withTitle: "empty.field".localized, alertState: .failure)
+            submitButton.showLoading(show: false)
             return
         }
         

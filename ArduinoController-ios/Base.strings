@@ -9,8 +9,8 @@
 "app.name" = "Arduino Controller";
 
 "mainListTitle" = "Your Faithful Servants";
-"aboutUsTitle" = "About Us";
-"settingsTitle" = "preferences";
+"aboutUsTitle" = "About Me";
+"settingsTitle" = "Preferences";
 
 "aboutUs" = "About Us";
 "mainList" = "Devices";
